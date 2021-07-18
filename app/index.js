@@ -1,4 +1,5 @@
 import About from "./pages/about.js";
+import Canvas from "./classes/Canvas.js";
 import Home from "./pages/home.js";
 import Project from "./pages/project.js";
 import gsap from "gsap";
@@ -32,6 +33,8 @@ class App {
       home: new Home(),
       project: new Project()
     };
+
+    new Canvas();
 
     this.page = this.pages[this.template];
 

@@ -22,10 +22,10 @@ export default class Page {
     this.element = document.querySelector(this.selector);
     this.elements = {};
 
-    new Canvas({
-      domElement: this.selectorChildren.canvas,
-      scroll: this.scroll
-    });
+    // new Canvas({
+    //   domElement: this.selectorChildren.canvas,
+    //   scroll: this.scroll
+    // });
 
     let currentColor = JSON.parse(localStorage.getItem("color"));
 

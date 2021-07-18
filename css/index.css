@@ -1517,7 +1517,7 @@ body::-webkit-scrollbar {
 }
 
 .home__works__list__media__image {
-  opacity: 1;
+  opacity: 0;
   -o-object-fit: cover;
      object-fit: cover;
 }
