@@ -1,0 +1,57 @@
+.home__myself {
+}
+
+.home__myself__wrapper {
+}
+
+.home__myself__label {
+  margin: 50.2rem 0;
+  text-align: center;
+
+  @include media("<=tablet") {
+    margin: 34rem 0;
+  }
+
+  @include media("<phone") {
+    margin: 20rem 0;
+  }
+}
+
+.home__myself__title {
+  @extend %title-200;
+  display: inline-block;
+  margin-bottom: 26.6rem;
+  white-space: nowrap;
+
+  span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  @include media("<=tablet") {
+    margin-bottom: 16rem;
+  }
+
+  @include media("<phone") {
+    margin-bottom: 10.8rem;
+  }
+}
+
+.home__myself__box {
+}
+
+.home__myself__description {
+  margin: auto;
+  max-width: 51.1rem;
+  line-height: 1.6;
+  letter-spacing: 0.0375rem;
+
+  &:last-child {
+    margin-top: 2.4rem;
+  }
+
+  @include media("<phone") {
+    margin-left: 2rem;
+    width: 35rem;
+  }
+}

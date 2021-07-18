@@ -1,0 +1,51 @@
+.footer {
+  margin-top: 30rem;
+
+  @include media("<=tablet") {
+    margin-top: 18.8888rem;
+  }
+
+  @include media("<phone") {
+    margin-top: 10.7142rem;
+  }
+}
+
+.footer__wrapper {
+}
+
+.footer__label {
+  margin: 50.2rem 0;
+  text-align: center;
+
+  @include media("<=tablet") {
+    margin: 34rem 0;
+  }
+
+  @include media("<phone") {
+    margin: 20rem 0;
+  }
+}
+
+.footer__box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.footer__link {
+  @extend %description-150;
+
+  font-weight: bold;
+
+  line-height: 1.2;
+
+  width: fit-content;
+
+  &:nth-child(even) {
+    justify-self: end;
+  }
+}
+
+.footer__name {
+  margin-top: 3rem;
+  fill: $color-pampas;
+}

@@ -1,0 +1,80 @@
+.about__awards {
+}
+
+.about__awards__title {
+  @extend %title-200;
+
+  font-weight: 400;
+  margin-bottom: 26.6rem;
+  margin-left: 8rem;
+  margin-top: 50.2rem;
+
+  @include media("<=tablet") {
+    margin-bottom: 16rem;
+    margin-left: 2rem;
+    margin-top: 34rem;
+  }
+
+  @include media("<phone") {
+    margin-bottom: 10.8rem;
+    margin-top: 20rem;
+  }
+}
+
+.about__awards__list {
+}
+
+.about__awards__list__item {
+  font-weight: bold;
+  padding: 4.4rem 8rem;
+  position: relative;
+
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: $color-pampas;
+    color: $color-cod-grey;
+  }
+
+  @include media("<=tablet") {
+    padding: 3rem 2rem;
+  }
+
+  @include media("<phone") {
+    padding: 1.6rem 2rem;
+  }
+}
+
+.about__awards__stroke {
+  border-top: 1px solid rgba($color: $color-pampas, $alpha: 0.2);
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform-origin: left;
+  width: 100%;
+}
+
+.about_awards__list__box {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 20vw 50vw 30vw;
+
+  @include media("<=tablet") {
+    grid-template-columns: 24vw 1fr 20vw;
+  }
+
+  @include media("<phone") {
+    grid-template-columns: 13.4rem 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+.about__awards__list__column {
+  @extend %description-40;
+
+  display: inline-block;
+
+  @include media("<phone") {
+    line-height: 1.5;
+  }
+}

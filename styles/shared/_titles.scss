@@ -1,0 +1,69 @@
+%title-20 {
+  font-size: 2rem;
+}
+
+%title-60 {
+  font-family: $font-bigilla;
+  font-size: 6rem;
+  font-weight: bold;
+
+  @include media("<phone") {
+    font-size: 3rem;
+  }
+}
+
+%title-140 {
+  font-family: $font-bigilla;
+  font-weight: bold;
+  font-size: 14rem;
+
+  @include media("<=tablet") {
+    font-size: 12rem;
+  }
+
+  @include media("<phone") {
+    font-size: 7rem;
+  }
+}
+
+%title-200 {
+  font-family: $font-bigilla;
+  font-weight: bold;
+  font-size: 20rem;
+
+  @include media("<=tablet") {
+    font-size: 10rem;
+  }
+
+  @include media("<phone") {
+    font-size: 4rem;
+  }
+}
+
+%title-200 {
+  font-family: $font-bigilla;
+  font-weight: bold;
+  font-size: 20rem;
+
+  @include media("<=tablet") {
+    font-size: 14rem;
+  }
+
+  @include media("<phone") {
+    font-size: 7rem;
+  }
+}
+
+%title-370 {
+  font-family: $font-bigilla;
+  font-weight: bold;
+  font-size: 37rem;
+
+  @include media("<=tablet") {
+    font-size: 14rem;
+  }
+
+  @include media("<phone") {
+    font-size: 7rem;
+  }
+}

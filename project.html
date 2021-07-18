@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body>
+    <nav class="navigation">
+      <a href="/" class="navigation__link">Home</a>
+      <a href="/about.html" class="navigation__link">About</a>
+    </nav>
+
+    <div class="main-wrapper" id="main-wrapper">
+      <div class="scrollable" id="scrollable">
+        <div
+          class="project"
+          data-barba="container"
+          data-barba-namespace="project"
+          data-template="project"
+        >
+          <div class="project__wrapper">
+            <h1 class="project__title">home decor</h1>
+            <p class="project__label">ui design</p>
+
+            <div class="project__presentation">
+              <div class="project__presentation__wrapper">
+                <figure class="project__presentation__media">
+                  <img
+                    class="project__presentation__media__image"
+                    src="./img/MelchiCover.jpg"
+                  />
+                </figure>
+              </div>
+            </div>
+
+            <div class="project__info">
+              <div class="project__info__box">
+                <h3 class="project__info__titles">category</h3>
+                <h3 class="project__info__titles">year</h3>
+                <h3 class="project__info__titles">url</h3>
+              </div>
+              <div class="project__info__box">
+                <p class="project__info__label">ui design</p>
+                <p class="project__info__label">2021</p>
+                <a
+                  class="project__info__label"
+                  href="https://dribbble.com/shots/15505127-Europe-Traveling-App"
+                  target="_blank"
+                  >VISIT PROJECT</a
+                >
+              </div>
+            </div>
+
+            <div class="project__gallery">
+              <div class="project__gallery__wrapper">
+                <figure class="project__gallery__media">
+                  <img
+                    class="project__gallery__media__image"
+                    src="./img/Melchi2.jpg"
+                    alt=""
+                  />
+                </figure>
+              </div>
+            </div>
+
+            <div class="project__contact">
+              <a
+                class="project__contact__title"
+                href="mailto:nunopereirasousa00@gmail.com"
+                data-text="TOGETHER"
+                >let's work</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./app/index.js"></script>
+  </body>
+</html>

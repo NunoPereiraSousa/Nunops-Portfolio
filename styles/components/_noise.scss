@@ -1,0 +1,11 @@
+.noise {
+  &::before {
+    background-image: url("../shared/noise.gif");
+    @extend %cover;
+    position: fixed;
+    content: "";
+    opacity: 0.025;
+    pointer-events: none;
+    z-index: z("noise");
+  }
+}

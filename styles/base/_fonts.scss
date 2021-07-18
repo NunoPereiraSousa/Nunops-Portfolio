@@ -1,0 +1,46 @@
+/* FONT BIGILLA */
+@font-face {
+  font-family: $font-bigilla;
+  src: url("../fonts/bigilla-regular.woff2") format("woff2"),
+    url("../fonts/bigilla-regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-bigilla;
+  src: url("../fonts/bigilla-bold.woff2") format("woff2"),
+    url("../fonts/bigilla-bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* FONT SUPREME */
+@font-face {
+  font-family: $font-supreme;
+  src: url("../fonts/supreme-light.woff2") format("woff2"),
+    url("../fonts/supreme-light.woff") format("woff");
+  font-weight: lighter;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-supreme;
+  src: url("../fonts/supreme-regular.woff2") format("woff2"),
+    url("../fonts/supreme-regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-supreme;
+  src: url("../fonts/supreme-medium.woff2") format("woff2"),
+    url("../fonts/supreme-medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}

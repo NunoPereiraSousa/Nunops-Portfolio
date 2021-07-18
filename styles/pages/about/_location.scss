@@ -1,0 +1,46 @@
+.about__location {
+}
+
+.about__location__label {
+  line-height: 1.6;
+  letter-spacing: 0.0375rem;
+  margin: 50.2rem auto;
+  max-width: 36.1rem;
+
+  @include media("<=tablet") {
+    margin: 34rem auto !important;
+    width: 26.1rem;
+  }
+
+  @include media("<phone") {
+    margin: 20rem auto !important;
+  }
+}
+
+.about__location__title {
+  @extend %title-200;
+
+  font-weight: 400;
+  margin-bottom: 26.6rem;
+  margin-left: 8rem;
+
+  @include media("<=tablet") {
+    margin-bottom: 16rem;
+    margin-left: 2rem;
+  }
+
+  @include media("<phone") {
+    margin-bottom: 10.8rem;
+  }
+}
+
+.about__location__labels {
+  line-height: 1.6;
+  letter-spacing: 0.0375rem;
+  margin: 2.4rem auto 0;
+  max-width: 46.1rem;
+
+  @include media("<phone") {
+    margin-left: 2rem;
+  }
+}

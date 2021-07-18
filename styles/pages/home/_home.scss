@@ -1,0 +1,57 @@
+.home {
+  // @extend %page;
+}
+
+.home__intro {
+  position: relative;
+  @extend %center;
+
+  height: 100vh;
+
+  @include media("<tablet") {
+    height: calc(100vh - (10vh + 8rem));
+  }
+
+  @include media("<phone") {
+    height: calc(100vh - (10vh + 4rem));
+  }
+}
+
+.home__title {
+  @extend %title-370;
+
+  max-width: 181.7rem;
+
+  @include media("<=tablet") {
+    width: 68rem;
+  }
+
+  @include media("<phone") {
+    width: 32.6rem;
+  }
+}
+
+.home__actions {
+}
+
+.home__label {
+  bottom: 4rem;
+  position: absolute;
+  right: 4rem;
+
+  @include media("<phone") {
+    right: 2rem;
+  }
+}
+
+.home__link {
+  bottom: 4rem;
+  cursor: pointer;
+  left: 4rem;
+  position: absolute;
+  text-transform: uppercase;
+
+  @include media("<phone") {
+    left: 2rem;
+  }
+}

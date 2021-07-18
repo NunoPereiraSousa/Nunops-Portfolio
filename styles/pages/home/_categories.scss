@@ -1,0 +1,76 @@
+.home__categories__wrapper {
+}
+
+.home__categories__list {
+  margin: 50.2rem 0;
+
+  @include media("<=tablet") {
+    margin: 34rem 0;
+  }
+
+  @include media("<phone") {
+    margin: 20rem 0;
+  }
+}
+
+.home__categories__list__item {
+  padding: 7.6rem 0;
+  position: relative;
+
+  @include media("<phone") {
+    padding: 3rem 0;
+  }
+
+  &:nth-child(1) h2 {
+    transform: translateX(33.4rem);
+
+    @include media("<=tablet") {
+      transform: translateX(26rem);
+    }
+
+    @include media("<phone") {
+      transform: translateX(6.8rem);
+    }
+  }
+
+  &:nth-child(2) h2 {
+    transform: translateX(83.9rem);
+
+    @include media("<=tablet") {
+      transform: translateX(10rem);
+    }
+
+    @include media("<phone") {
+      transform: translateX(15.2rem);
+    }
+  }
+
+  &:nth-child(3) h2 {
+    transform: translateX(26.7rem);
+
+    @include media("<=tablet") {
+      transform: translateX(28rem);
+    }
+
+    @include media("<phone") {
+      transform: translateX(6.4rem);
+    }
+  }
+}
+
+.home__categories__stroke {
+  border-top: 1px solid rgba($color: $color-pampas, $alpha: 0.2);
+  display: inline-block;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform-origin: left;
+  width: 100%;
+}
+
+.home__categories__title {
+  @extend %description-150;
+
+  font-weight: 400;
+  width: fit-content;
+}
