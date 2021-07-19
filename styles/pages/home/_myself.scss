@@ -5,6 +5,7 @@
 }
 
 .home__myself__label {
+  line-height: 1.6;
   margin: 50.2rem 0;
   text-align: center;
 
@@ -14,12 +15,13 @@
 
   @include media("<phone") {
     margin: 20rem 0;
+    margin-left: 2rem;
+    text-align: left;
   }
 }
 
 .home__myself__title {
   @extend %title-200;
-  display: inline-block;
   margin-bottom: 26.6rem;
   white-space: nowrap;
 

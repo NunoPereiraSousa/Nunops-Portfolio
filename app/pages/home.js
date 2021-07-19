@@ -1,6 +1,9 @@
 import Button from "../classes/Button.js";
+import Canvas from "../classes/Canvas.js";
+
 import gsap from "gsap";
 import Page from "../classes/Page.js";
+import VerticalSlider from "../components/VerticalSlider.js";
 
 export default class Home extends Page {
   constructor() {
@@ -17,11 +20,13 @@ export default class Home extends Page {
       }
     });
 
-    console.log(this.elements.button);
+    this.resize();
   }
 
   create() {
     super.create();
+
+    new Canvas();
 
     this.link = new Button({
       element: this.elements.button
@@ -29,55 +34,47 @@ export default class Home extends Page {
 
     this.myselfCarousel();
     this.worksCarousel();
+    this.awardsCarousel();
+    this.servicesCarousel();
   }
 
   myselfCarousel() {
-    let spans = document.querySelectorAll(".spans");
-
-    let containerWidth = document
-      .querySelector(".home__myself__title")
-      .getBoundingClientRect().width;
-
-    let titleWidth = spans[0].getBoundingClientRect().width;
-
-    let initial_offset = ((2 * titleWidth) / containerWidth) * 100 * -1;
-
-    gsap.set(".home__myself__title", {
-      xPercent: `${initial_offset}`
+    this.slider = new VerticalSlider({
+      spans: document.querySelectorAll(".spans"),
+      title: document.querySelector(".home__myself__title")
     });
 
-    this.animate = gsap.timeline();
-
-    this.animate.to(".home__myself__title", {
-      xPercent: 0,
-      duration: 8,
-      repeat: -1,
-      ease: "none"
-    });
+    this.slider.slider();
   }
 
   worksCarousel() {
-    let spans = document.querySelectorAll(".work__spans");
-
-    let containerWidth = document
-      .querySelector(".home__works__title")
-      .getBoundingClientRect().width;
-
-    let titleWidth = spans[0].getBoundingClientRect().width;
-
-    let initial_offset = ((2 * titleWidth) / containerWidth) * 100 * -1;
-
-    gsap.set(".home__works__title", {
-      xPercent: `${initial_offset}`
+    this.slider = new VerticalSlider({
+      spans: document.querySelectorAll(".work__spans"),
+      title: document.querySelector(".home__works__title")
     });
 
-    this.animate = gsap.timeline();
+    this.slider.slider();
+  }
 
-    this.animate.to(".home__works__title", {
-      xPercent: 0,
-      duration: 8,
-      repeat: -1,
-      ease: "none"
+  awardsCarousel() {
+    this.slider = new VerticalSlider({
+      spans: document.querySelectorAll(".awards__spans"),
+      title: document.querySelector(".home__awards__title")
     });
+
+    this.slider.slider();
+  }
+
+  servicesCarousel() {
+    this.slider = new VerticalSlider({
+      spans: document.querySelectorAll(".services__spans"),
+      title: document.querySelector(".home__services__title")
+    });
+
+    this.slider.slider();
+  }
+
+  resize() {
+    window.addEventListener("resize", this.slider.resize());
   }
 }

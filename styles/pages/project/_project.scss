@@ -175,7 +175,7 @@
   &::after {
     content: attr(data-text);
     color: #5d737e;
-    transform: translate(-50%, -100%);
+    transform: translate(-50%, 100%);
     position: absolute;
     left: 50%;
     -webkit-text-stroke: 4px #5d737e;

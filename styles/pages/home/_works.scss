@@ -6,6 +6,7 @@
 
 .home__works__label {
   margin: 50.2rem 0;
+  line-height: 1.6;
   text-align: center;
 
   @include media("<tablet") {
@@ -14,6 +15,8 @@
 
   @include media("<phone") {
     margin: 20rem 0;
+    margin-left: 2rem;
+    text-align: left;
   }
 }
 

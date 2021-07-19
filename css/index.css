@@ -193,7 +193,7 @@ ul {
   list-style: none;
 }
 
-html, body, .preloader, .navigation, .noise::before, .about__media__image, .home__works__list__media__image, .project__presentation__media__image, .project__gallery__media__image {
+html, body, .preloader, .navigation, .noise::before, .about__media__image, .home__works__list__media__image, .home__services__list__media__image, .project__presentation__media__image, .project__gallery__media__image {
   height: 100%;
   left: 0;
   -o-object-fit: cover;
@@ -297,20 +297,20 @@ body {
   }
 }
 
-.about__awards__list__column {
+.about__awards__list__column, .home__awards__list__column, .home__services__list__desc {
   font-family: "Bigilla";
   font-size: 4rem;
 }
 
 @media (max-width: 1024px) {
-  .about__awards__list__column {
+  .about__awards__list__column, .home__awards__list__column, .home__services__list__desc {
     font-size: 2.4rem;
     font-weight: 400;
   }
 }
 
 @media (max-width: 767px) {
-  .about__awards__list__column {
+  .about__awards__list__column, .home__awards__list__column, .home__services__list__desc {
     font-family: "Supreme";
     font-size: 1.5rem;
   }
@@ -333,14 +333,14 @@ body {
   }
 }
 
-.home__works__list__title {
+.home__works__list__title, .home__services__list__title {
   font-family: "Bigilla";
   font-size: 6rem;
   font-weight: bold;
 }
 
 @media (max-width: 767px) {
-  .home__works__list__title {
+  .home__works__list__title, .home__services__list__title {
     font-size: 3rem;
   }
 }
@@ -363,38 +363,38 @@ body {
   }
 }
 
-.preloader__number, .about__location__title, .about__info__title, .about__awards__title, .home__myself__title, .home__works__title, .project__contact__title {
+.preloader__number, .about__location__title, .about__info__title, .about__awards__title, .home__myself__title, .home__works__title, .home__awards__title, .home__services__title, .project__contact__title {
   font-family: "Bigilla";
   font-weight: bold;
   font-size: 20rem;
 }
 
 @media (max-width: 1024px) {
-  .preloader__number, .about__location__title, .about__info__title, .about__awards__title, .home__myself__title, .home__works__title, .project__contact__title {
+  .preloader__number, .about__location__title, .about__info__title, .about__awards__title, .home__myself__title, .home__works__title, .home__awards__title, .home__services__title, .project__contact__title {
     font-size: 10rem;
   }
 }
 
 @media (max-width: 767px) {
-  .preloader__number, .about__location__title, .about__info__title, .about__awards__title, .home__myself__title, .home__works__title, .project__contact__title {
+  .preloader__number, .about__location__title, .about__info__title, .about__awards__title, .home__myself__title, .home__works__title, .home__awards__title, .home__services__title, .project__contact__title {
     font-size: 4rem;
   }
 }
 
-.preloader__number, .about__location__title, .about__info__title, .about__awards__title, .home__myself__title, .home__works__title, .project__contact__title {
+.preloader__number, .about__location__title, .about__info__title, .about__awards__title, .home__myself__title, .home__works__title, .home__awards__title, .home__services__title, .project__contact__title {
   font-family: "Bigilla";
   font-weight: bold;
   font-size: 20rem;
 }
 
 @media (max-width: 1024px) {
-  .preloader__number, .about__location__title, .about__info__title, .about__awards__title, .home__myself__title, .home__works__title, .project__contact__title {
+  .preloader__number, .about__location__title, .about__info__title, .about__awards__title, .home__myself__title, .home__works__title, .home__awards__title, .home__services__title, .project__contact__title {
     font-size: 14rem;
   }
 }
 
 @media (max-width: 767px) {
-  .preloader__number, .about__location__title, .about__info__title, .about__awards__title, .home__myself__title, .home__works__title, .project__contact__title {
+  .preloader__number, .about__location__title, .about__info__title, .about__awards__title, .home__myself__title, .home__works__title, .home__awards__title, .home__services__title, .project__contact__title {
     font-size: 7rem;
   }
 }
@@ -516,6 +516,7 @@ body::-webkit-scrollbar {
           transform-origin: 0 0;
   z-index: 5;
   width: 100vw;
+  display: none;
 }
 
 .preloader--loaded {
@@ -677,6 +678,12 @@ body::-webkit-scrollbar {
   fill: #f6f5f1;
 }
 
+@media (max-width: 767px) {
+  .footer__name {
+    margin-bottom: 1.5rem;
+  }
+}
+
 .webgl {
   position: fixed;
   z-index: -1;
@@ -691,6 +698,18 @@ body::-webkit-scrollbar {
   opacity: 0.025;
   pointer-events: none;
   z-index: 3;
+}
+
+.curtain {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: #f6f5f1;
+  -webkit-transform: translate(0, 100%);
+          transform: translate(0, 100%);
 }
 
 .about__box {
@@ -1037,6 +1056,7 @@ body::-webkit-scrollbar {
 }
 
 .home__myself__label {
+  line-height: 1.6;
   margin: 50.2rem 0;
   text-align: center;
 }
@@ -1050,11 +1070,12 @@ body::-webkit-scrollbar {
 @media (max-width: 767px) {
   .home__myself__label {
     margin: 20rem 0;
+    margin-left: 2rem;
+    text-align: left;
   }
 }
 
 .home__myself__title {
-  display: inline-block;
   margin-bottom: 26.6rem;
   white-space: nowrap;
 }
@@ -1198,6 +1219,7 @@ body::-webkit-scrollbar {
 
 .home__works__label {
   margin: 50.2rem 0;
+  line-height: 1.6;
   text-align: center;
 }
 
@@ -1210,6 +1232,8 @@ body::-webkit-scrollbar {
 @media (max-width: 767px) {
   .home__works__label {
     margin: 20rem 0;
+    margin-left: 2rem;
+    text-align: left;
   }
 }
 
@@ -1522,6 +1546,254 @@ body::-webkit-scrollbar {
      object-fit: cover;
 }
 
+.home__awards__label {
+  margin: 50.2rem 0;
+  text-align: center;
+}
+
+@media (max-width: 1023px) {
+  .home__awards__label {
+    margin: 34rem 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .home__awards__label {
+    margin: 20rem 0;
+  }
+}
+
+.home__awards__title {
+  display: inline-block;
+  margin-bottom: 26.6rem;
+  white-space: nowrap;
+}
+
+.home__awards__title span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@media (max-width: 1023px) {
+  .home__awards__title {
+    margin-bottom: 16rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .home__awards__title {
+    margin-bottom: 10.8rem;
+  }
+}
+
+.home__awards__list__item {
+  font-weight: bold;
+  padding: 4.4rem 8rem;
+  position: relative;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.home__awards__list__item:hover {
+  background-color: #f6f5f1;
+  color: #1a1a1a;
+}
+
+@media (max-width: 1024px) {
+  .home__awards__list__item {
+    padding: 3rem 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .home__awards__list__item {
+    padding: 1.6rem 2rem;
+  }
+}
+
+.home__awards__stroke {
+  border-top: 1px solid rgba(246, 245, 241, 0.2);
+  left: 0;
+  position: absolute;
+  top: 0;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  width: 100%;
+}
+
+.home_awards__list__box {
+  overflow: hidden;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 20vw 50vw 30vw;
+      grid-template-columns: 20vw 50vw 30vw;
+}
+
+@media (max-width: 1024px) {
+  .home_awards__list__box {
+    -ms-grid-columns: 24vw 1fr 20vw;
+        grid-template-columns: 24vw 1fr 20vw;
+  }
+}
+
+@media (max-width: 767px) {
+  .home_awards__list__box {
+    -ms-grid-columns: 13.4rem 1fr;
+        grid-template-columns: 13.4rem 1fr;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+  }
+}
+
+.home__awards__list__column {
+  display: inline-block;
+}
+
+@media (max-width: 767px) {
+  .home__awards__list__column {
+    line-height: 1.5;
+  }
+}
+
+.home__services__label {
+  margin: 50.2rem auto;
+  max-width: 51.4rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 1023px) {
+  .home__services__label {
+    margin: 34rem auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .home__services__label {
+    margin: 20rem 0;
+    margin-left: 2rem;
+  }
+}
+
+.home__services__title {
+  display: inline-block;
+  margin-bottom: 26.6rem;
+  white-space: nowrap;
+}
+
+.home__services__title span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@media (max-width: 1023px) {
+  .home__services__title {
+    margin-bottom: 16rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .home__services__title {
+    margin-bottom: 10.8rem;
+  }
+}
+
+.home__services__list {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  margin-left: 4rem;
+  margin-right: 4rem;
+}
+
+@media (max-width: 1023px) {
+  .home__services__list {
+    grid-row-gap: 15rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .home__services__list {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    grid-row-gap: 6rem;
+  }
+}
+
+.home__services__list__link {
+  display: block;
+}
+
+.home__services__list__link:nth-child(odd):not(:first-of-type) {
+  display: block;
+}
+
+@media (max-width: 1279px) {
+  .home__services__list__link:nth-child(odd):not(:first-of-type) {
+    margin-top: 15%;
+  }
+}
+
+@media (max-width: 1023px) {
+  .home__services__list__link:nth-child(odd):not(:first-of-type) {
+    margin-top: 0;
+  }
+}
+
+.home__services__list__link:nth-child(even) {
+  margin-left: auto;
+  margin-top: 15%;
+}
+
+@media (max-width: 1023px) {
+  .home__services__list__link:nth-child(even) {
+    margin-top: 0;
+    margin-left: 0;
+  }
+}
+
+.home__services__list__media {
+  height: 93.9rem;
+  margin-top: 3rem;
+  position: relative;
+  width: 66.3rem;
+}
+
+@media (max-width: 1023px) {
+  .home__services__list__media {
+    width: calc(100vw - 8rem);
+  }
+}
+
+@media (max-width: 767px) {
+  .home__services__list__media {
+    height: 49.7rem;
+    width: calc(100vw - 4rem);
+  }
+}
+
+@media (max-width: 767px) {
+  .home__services__list__media {
+    margin-top: 2rem;
+  }
+}
+
+.home__services__list__media__image {
+  opacity: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.home__services__list__desc {
+  margin-top: 1.6rem;
+}
+
 .project__title {
   margin-bottom: 7.8rem;
   margin-top: 24.8rem;
@@ -1711,8 +1983,8 @@ body::-webkit-scrollbar {
 .project__contact__title::after {
   content: attr(data-text);
   color: #5d737e;
-  -webkit-transform: translate(-50%, -100%);
-          transform: translate(-50%, -100%);
+  -webkit-transform: translate(-50%, 100%);
+          transform: translate(-50%, 100%);
   position: absolute;
   left: 50%;
   -webkit-text-stroke: 4px #5d737e;

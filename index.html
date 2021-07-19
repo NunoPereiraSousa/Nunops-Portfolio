@@ -9,16 +9,56 @@
     <link rel="stylesheet" href="css/index.css" />
   </head>
   <body>
+    <div class="preloader">
+      <div class="preloader__number">
+        <div class="preloader__number__label">0%</div>
+      </div>
+      <div class="preloader__box">
+        <div class="preloader__graphics__box">
+          <svg
+            class="stars"
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 10.51 10.51"
+          >
+            <path
+              d="M3.11,10.51l.28-3.42L0,7.49,2.57,5.26,0,3l3.39.42L3.11,0,5.26,2.66,7.43,0,7.12,3.42,10.51,3,7.94,5.26l2.57,2.23-3.39-.4.31,3.42L5.26,7.83Z"
+            ></path>
+          </svg>
+        </div>
+        <p class="preloader__title">More than a web developer</p>
+        <div class="preloader__graphics__box">
+          <svg
+            class="stars"
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 10.51 10.51"
+          >
+            <path
+              d="M3.11,10.51l.28-3.42L0,7.49,2.57,5.26,0,3l3.39.42L3.11,0,5.26,2.66,7.43,0,7.12,3.42,10.51,3,7.94,5.26l2.57,2.23-3.39-.4.31,3.42L5.26,7.83Z"
+            ></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+
     <nav class="navigation">
-      <a href="/" class="navigation__link">Home</a>
-      <a href="/about.html" class="navigation__link">About</a>
+      <a href="/" class="navigation__link">Nuno Pereira Sousa</a>
+      <a href="mailto:nunopereirasousa00@gmail.com" class="navigation__link"
+        >open to work</a
+      >
     </nav>
 
     <canvas class="webgl"></canvas>
 
     <div class="main-wrapper" id="main-wrapper">
       <div class="scrollable" id="scrollable">
-        <div class="content" id="container" data-template="home">
+        <div
+          class="content"
+          id="container"
+          data-template="home"
+          data-barba="wrapper"
+        >
           <div class="home" data-barba="container" data-barba-namespace="home">
             <div class="home__wrapper">
               <div class="home__intro">
@@ -30,9 +70,13 @@
                   <button class="home__link">change theme</button>
                 </div>
               </div>
+
               <section class="home__myself">
                 <div class="home__myself__wrapper">
-                  <p class="home__myself__label">Stay hard.</p>
+                  <p class="home__myself__label">
+                    "It’s not about the destination. It’s the journey. That’s
+                    what matters."
+                  </p>
                   <h2 class="home__myself__title">
                     <span class="spans">Myself-</span
                     ><span class="spans">Myself-</span
@@ -53,9 +97,13 @@
                   </div>
                 </div>
               </section>
+
               <section class="home__works">
                 <div class="home__works__wrapper">
-                  <p class="home__works__label">Now it's time to shine.</p>
+                  <p class="home__works__label">
+                    "Once you know what failure feels like, determination chases
+                    success."
+                  </p>
                   <h2 class="home__works__title">
                     <span class="work__spans">Works-</span
                     ><span class="work__spans">Works-</span
@@ -153,10 +201,199 @@
                 </div>
               </section>
 
+              <section class="home__awards">
+                <div class="home__awards__wrapper">
+                  <p class="home__awards__label">Hard work pays off.</p>
+
+                  <h2 class="home__awards__title">
+                    <span class="awards__spans">Awards-</span
+                    ><span class="awards__spans">Awards-</span
+                    ><span class="awards__spans">Awards-</span
+                    ><span class="awards__spans">Awards-</span
+                    ><span class="awards__spans">Awards-</span>
+                  </h2>
+                  <ul class="home__awards__list">
+                    <li class="home__awards__list__item">
+                      <span
+                        class="home__awards__stroke"
+                        data-animation="line"
+                      ></span>
+                      <div class="home_awards__list__box">
+                        <p class="home__awards__list__column">2009</p>
+                        <p class="home__awards__list__column">
+                          Athlete of the year
+                        </p>
+                        <p class="home__awards__list__column">FC Porto</p>
+                      </div>
+                    </li>
+
+                    <li class="home__awards__list__item">
+                      <span
+                        class="home__awards__stroke"
+                        data-animation="line"
+                      ></span>
+                      <div class="home_awards__list__box">
+                        <p class="home__awards__list__column">2009</p>
+                        <p class="home__awards__list__column">
+                          Athlete of the year
+                        </p>
+                        <p class="home__awards__list__column">FC Porto</p>
+                      </div>
+                    </li>
+
+                    <li class="home__awards__list__item">
+                      <span
+                        class="home__awards__stroke"
+                        data-animation="line"
+                      ></span>
+                      <div class="home_awards__list__box">
+                        <p class="home__awards__list__column">2009</p>
+                        <p class="home__awards__list__column">
+                          Athlete of the year
+                        </p>
+                        <p class="home__awards__list__column">FC Porto</p>
+                      </div>
+                    </li>
+
+                    <li class="home__awards__list__item">
+                      <span
+                        class="home__awards__stroke"
+                        data-animation="line"
+                      ></span>
+                      <div class="home_awards__list__box">
+                        <p class="home__awards__list__column">2009</p>
+                        <p class="home__awards__list__column">
+                          Athlete of the year
+                        </p>
+                        <p class="home__awards__list__column">FC Porto</p>
+                      </div>
+                    </li>
+
+                    <li class="home__awards__list__item">
+                      <span
+                        class="home__awards__stroke"
+                        data-animation="line"
+                      ></span>
+                      <div class="home_awards__list__box">
+                        <p class="home__awards__list__column">2009</p>
+                        <p class="home__awards__list__column">
+                          Athlete of the year
+                        </p>
+                        <p class="home__awards__list__column">FC Porto</p>
+                      </div>
+                    </li>
+
+                    <li class="home__awards__list__item">
+                      <span
+                        class="home__awards__stroke"
+                        data-animation="line"
+                      ></span>
+                      <div class="home_awards__list__box">
+                        <p class="home__awards__list__column">2009</p>
+                        <p class="home__awards__list__column">
+                          Athlete of the year
+                        </p>
+                        <p class="home__awards__list__column">FC Porto</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </section>
+
+              <section class="home__services">
+                <div class="home__services__wrapper">
+                  <p class="home__services__label">
+                    “The most important thing is to try and inspire people so
+                    that they can be great in whatever they want to do.”
+                  </p>
+
+                  <h2 class="home__services__title">
+                    <span class="services__spans">Services-</span
+                    ><span class="services__spans">Services-</span
+                    ><span class="services__spans">Services-</span
+                    ><span class="services__spans">Services-</span
+                    ><span class="services__spans">Services-</span>
+                  </h2>
+
+                  <div class="home__services__list">
+                    <a
+                      class="home__services__list__link"
+                      href="mailto:nunopereirasousa00@gmail.com"
+                    >
+                      <h3 class="home__services__list__title">
+                        Single page website
+                      </h3>
+                      <figure class="home__services__list__media">
+                        <img
+                          class="home__services__list__media__image"
+                          src="./img/Service.png"
+                          alt=""
+                          crossorigin="anonymous"
+                        />
+                      </figure>
+                      <p class="home__services__list__desc">From $1.200</p></a
+                    >
+                    <a
+                      class="home__services__list__link"
+                      href="mailto:nunopereirasousa00@gmail.com"
+                    >
+                      <h3 class="home__services__list__title">
+                        Business websites
+                      </h3>
+                      <figure class="home__services__list__media">
+                        <img
+                          class="home__services__list__media__image"
+                          src="./img/Service.png"
+                          alt=""
+                          crossorigin="anonymous"
+                        />
+                      </figure>
+                      <p class="home__services__list__desc">From $2.000</p></a
+                    >
+                    <a
+                      class="home__services__list__link"
+                      href="mailto:nunopereirasousa00@gmail.com"
+                    >
+                      <h3 class="home__services__list__title">
+                        app/ desktop design
+                      </h3>
+                      <figure class="home__services__list__media">
+                        <img
+                          class="home__services__list__media__image"
+                          src="./img/Service.png"
+                          alt=""
+                          crossorigin="anonymous"
+                        />
+                      </figure>
+                      <p class="home__services__list__desc">From $450</p></a
+                    >
+                    <a
+                      class="home__services__list__link"
+                      href="mailto:nunopereirasousa00@gmail.com"
+                    >
+                      <h3 class="home__services__list__title">
+                        coding lessons
+                      </h3>
+                      <figure class="home__services__list__media">
+                        <img
+                          class="home__services__list__media__image"
+                          src="./img/Service.png"
+                          alt=""
+                          crossorigin="anonymous"
+                        />
+                      </figure>
+                      <p class="home__services__list__desc">
+                        From $45 / hour
+                      </p></a
+                    >
+                  </div>
+                </div>
+              </section>
+
               <footer class="footer">
                 <div class="footer__wrapper">
                   <p class="footer__label" data-animation="paragraph">
-                    kindness always wins.
+                    spread positivity.
                   </p>
                   <div class="footer__box">
                     <a

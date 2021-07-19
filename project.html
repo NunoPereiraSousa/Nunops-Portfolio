@@ -9,6 +9,39 @@
     <link rel="stylesheet" href="css/index.css" />
   </head>
   <body>
+    <div class="preloader">
+      <div class="preloader__number">
+        <div class="preloader__number__label">0%</div>
+      </div>
+      <div class="preloader__box">
+        <div class="preloader__graphics__box">
+          <svg
+            class="stars"
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 10.51 10.51"
+          >
+            <path
+              d="M3.11,10.51l.28-3.42L0,7.49,2.57,5.26,0,3l3.39.42L3.11,0,5.26,2.66,7.43,0,7.12,3.42,10.51,3,7.94,5.26l2.57,2.23-3.39-.4.31,3.42L5.26,7.83Z"
+            ></path>
+          </svg>
+        </div>
+        <p class="preloader__title">More than a web developer</p>
+        <div class="preloader__graphics__box">
+          <svg
+            class="stars"
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 10.51 10.51"
+          >
+            <path
+              d="M3.11,10.51l.28-3.42L0,7.49,2.57,5.26,0,3l3.39.42L3.11,0,5.26,2.66,7.43,0,7.12,3.42,10.51,3,7.94,5.26l2.57,2.23-3.39-.4.31,3.42L5.26,7.83Z"
+            ></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+
     <nav class="navigation">
       <a href="/" class="navigation__link">Home</a>
       <a href="/about.html" class="navigation__link">About</a>
@@ -17,63 +50,70 @@
     <div class="main-wrapper" id="main-wrapper">
       <div class="scrollable" id="scrollable">
         <div
-          class="project"
-          data-barba="container"
-          data-barba-namespace="project"
+          class="content"
+          id="container"
           data-template="project"
+          data-barba="wrapper"
         >
-          <div class="project__wrapper">
-            <h1 class="project__title">home decor</h1>
-            <p class="project__label">ui design</p>
+          <div
+            class="project"
+            data-template="project"
+            data-barba="container"
+            data-barba-namespace="project"
+          >
+            <div class="project__wrapper">
+              <h1 class="project__title">home decor</h1>
+              <p class="project__label">ui design</p>
 
-            <div class="project__presentation">
-              <div class="project__presentation__wrapper">
-                <figure class="project__presentation__media">
-                  <img
-                    class="project__presentation__media__image"
-                    src="./img/MelchiCover.jpg"
-                  />
-                </figure>
+              <div class="project__presentation">
+                <div class="project__presentation__wrapper">
+                  <figure class="project__presentation__media">
+                    <img
+                      class="project__presentation__media__image"
+                      src="./img/MelchiCover.jpg"
+                    />
+                  </figure>
+                </div>
               </div>
-            </div>
 
-            <div class="project__info">
-              <div class="project__info__box">
-                <h3 class="project__info__titles">category</h3>
-                <h3 class="project__info__titles">year</h3>
-                <h3 class="project__info__titles">url</h3>
+              <div class="project__info">
+                <div class="project__info__box">
+                  <h3 class="project__info__titles">category</h3>
+                  <h3 class="project__info__titles">year</h3>
+                  <h3 class="project__info__titles">url</h3>
+                </div>
+                <div class="project__info__box">
+                  <p class="project__info__label">ui design</p>
+                  <p class="project__info__label">2021</p>
+                  <a
+                    class="project__info__label"
+                    href="https://dribbble.com/shots/15505127-Europe-Traveling-App"
+                    target="_blank"
+                    >VISIT PROJECT</a
+                  >
+                </div>
               </div>
-              <div class="project__info__box">
-                <p class="project__info__label">ui design</p>
-                <p class="project__info__label">2021</p>
+
+              <div class="project__gallery">
+                <div class="project__gallery__wrapper">
+                  <figure class="project__gallery__media">
+                    <img
+                      class="project__gallery__media__image"
+                      src="./img/Melchi2.jpg"
+                      alt=""
+                    />
+                  </figure>
+                </div>
+              </div>
+
+              <div class="project__contact">
                 <a
-                  class="project__info__label"
-                  href="https://dribbble.com/shots/15505127-Europe-Traveling-App"
-                  target="_blank"
-                  >VISIT PROJECT</a
+                  class="project__contact__title"
+                  href="mailto:nunopereirasousa00@gmail.com"
+                  data-text="TOGETHER"
+                  >let's work</a
                 >
               </div>
-            </div>
-
-            <div class="project__gallery">
-              <div class="project__gallery__wrapper">
-                <figure class="project__gallery__media">
-                  <img
-                    class="project__gallery__media__image"
-                    src="./img/Melchi2.jpg"
-                    alt=""
-                  />
-                </figure>
-              </div>
-            </div>
-
-            <div class="project__contact">
-              <a
-                class="project__contact__title"
-                href="mailto:nunopereirasousa00@gmail.com"
-                data-text="TOGETHER"
-                >let's work</a
-              >
             </div>
           </div>
         </div>

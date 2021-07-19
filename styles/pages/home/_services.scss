@@ -1,0 +1,128 @@
+.home__services {
+}
+
+.home__services__wrapper {
+}
+
+.home__services__label {
+  margin: 50.2rem auto;
+  max-width: 51.4rem;
+  line-height: 1.6;
+
+  @include media("<tablet") {
+    margin: 34rem auto;
+  }
+
+  @include media("<phone") {
+    margin: 20rem 0;
+    margin-left: 2rem;
+  }
+}
+
+.home__services__title {
+  @extend %title-200;
+  display: inline-block;
+  margin-bottom: 26.6rem;
+  white-space: nowrap;
+
+  span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  @include media("<tablet") {
+    margin-bottom: 16rem;
+  }
+
+  @include media("<phone") {
+    margin-bottom: 10.8rem;
+  }
+}
+
+.home__services__list {
+  align-items: start;
+  flex-wrap: wrap;
+  display: flex;
+  grid-template-rows: auto;
+  // grid-row-gap: 150px;
+  margin-left: 4rem;
+  margin-right: 4rem;
+
+  @include media("<tablet") {
+    grid-row-gap: 15rem;
+  }
+
+  @include media("<phone") {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    grid-row-gap: 6rem;
+  }
+}
+
+.home__services__list__link {
+  display: block;
+  // @extend %title-200;
+
+  // span {
+  //   display: inline-block;
+  // }
+
+  &:nth-child(odd):not(:first-of-type) {
+    display: block;
+
+    @include media("<large") {
+      margin-top: 15%;
+    }
+
+    @include media("<tablet") {
+      margin-top: 0;
+    }
+  }
+
+  &:nth-child(even) {
+    margin-left: auto;
+    margin-top: 15%;
+
+    @include media("<tablet") {
+      margin-top: 0;
+      margin-left: 0;
+    }
+  }
+}
+
+.home__services__list__title {
+  @extend %title-60;
+}
+
+.home__services__list__media {
+  height: 93.9rem;
+  margin-top: 3rem;
+  position: relative;
+  width: 66.3rem;
+
+  @include media("<tablet") {
+    width: calc(100vw - 8rem);
+  }
+
+  @include media("<phone") {
+    height: 49.7rem;
+    width: calc(100vw - 4rem);
+  }
+
+  @include media("<phone") {
+    margin-top: 2rem;
+  }
+}
+
+.home__services__list__media__image {
+  @extend %cover;
+  opacity: 0;
+
+  object-fit: cover;
+}
+
+.home__services__list__desc {
+  @extend %description-40;
+
+  margin-top: 1.6rem;
+}

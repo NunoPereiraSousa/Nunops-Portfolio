@@ -12,8 +12,6 @@ export default class Button {
   constructor({ element }) {
     this.element = element;
 
-    console.log(this.element);
-
     this.addEventListener();
   }
 
