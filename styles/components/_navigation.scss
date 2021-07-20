@@ -13,6 +13,7 @@
   top: 4rem;
 
   &:first-child {
+    cursor: pointer;
     left: 4rem;
 
     @include media("<phone") {

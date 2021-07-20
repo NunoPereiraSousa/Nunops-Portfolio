@@ -17,7 +17,7 @@
   }
 
   // REMOVE THIS FOR PRODUCTION
-  display: none;
+  // display: none;
 }
 
 .preloader__number {
@@ -81,8 +81,10 @@
 }
 
 .preloader__title {
-  display: inline-block;
   @extend %description-18;
+
+  display: inline-block;
+  font-weight: 500;
 }
 
 .preloader__graphics__box {

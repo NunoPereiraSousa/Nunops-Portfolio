@@ -521,7 +521,6 @@ body::-webkit-scrollbar {
           transform-origin: 0 0;
   z-index: 5;
   width: 100vw;
-  display: none;
 }
 
 .preloader--loaded {
@@ -590,6 +589,7 @@ body::-webkit-scrollbar {
 
 .preloader__title {
   display: inline-block;
+  font-weight: 500;
 }
 
 .navigation {
@@ -605,6 +605,7 @@ body::-webkit-scrollbar {
 }
 
 .navigation__link:first-child {
+  cursor: pointer;
   left: 4rem;
 }
 
