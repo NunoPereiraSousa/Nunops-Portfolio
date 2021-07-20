@@ -7,7 +7,6 @@ import mockup from "../../img/MelchiCover.jpg";
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
-import imagesLoaded from "imagesloaded";
 
 /*------------------------------
 onPage Load
@@ -148,7 +147,7 @@ Handle Body Settings
   initSmoothScroll() {
     this.handleScrollContainersStyles();
     this.handleDocumentBodySettings();
-    // this.handleWindowResize();
+    this.handleWindowResize();
     this.siSmoothScroller();
   }
 
@@ -188,8 +187,8 @@ Handle Body Settings
         hover: { value: new THREE.Vector2(0.5, 0.5) },
         hoverState: {
           value: 0
-        },
-        oceanTexture: { value: new THREE.TextureLoader().load(this.mockup) }
+        }
+        // oceanTexture: { value: new THREE.TextureLoader().load(this.mockup) }
       },
       side: THREE.DoubleSide,
       fragmentShader: fragment,
@@ -266,10 +265,23 @@ Handle Body Settings
   }
 
   addObjects() {
-    this.geometry = new THREE.BoxGeometry(0.2, 0.2, 0.2);
-    this.material = new THREE.MeshNormalMaterial();
+    this.sphereGeometry = new THREE.SphereBufferGeometry(45, 100, 100);
+    // this.sphereMaterial = new THREE.MeshBasicMaterial({ color: 0xffff00 });
 
-    this.mesh = new THREE.Mesh(this.geometry, this.material);
+    this.sphereMaterial = new THREE.ShaderMaterial({
+      wireframe: false,
+      uniforms: {
+        time: { value: this.time },
+        // uTexture: { value: new THREE.TextureLoader().load(texture) },
+        resolution: { value: new THREE.Vector2() }
+      },
+      vertexShader: vertexMesh,
+      fragmentShader: fragmentMesh
+    });
+
+    this.mesh = new THREE.Mesh(this.sphereGeometry, this.sphereMaterial);
+    this.mesh.position.z = -10;
+
     this.scene.add(this.mesh);
   }
 
@@ -369,8 +381,9 @@ Handle Body Settings
 
   render() {
     this.time += 0.05;
-    // this.mesh.rotation.x = this.time / 2000;
-    // this.mesh.rotation.y = this.time / 1000;
+    // this.mesh.rotation.x = this.time / 80;
+    // this.mesh.rotation.y = this.time / 80;
+    // this.sphereMaterial.uniforms.time.value = this.time;
 
     this.currentScroll = this.scroll.current;
 

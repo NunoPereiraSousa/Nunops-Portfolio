@@ -48,8 +48,8 @@
 .footer__name {
   margin-top: 3rem;
   fill: $color-pampas;
+  margin-bottom: 1.5rem;
 
   @include media("<phone") {
-    margin-bottom: 1.5rem;
   }
 }

@@ -4,57 +4,72 @@ import {
   COLOR_COD_GREY,
   COLOR_RUSSET,
   COLOR_WILLOW_GROVE,
-  COLOR_NEVADA
+  COLOR_NEVADA,
+  GRADIENT_ONE,
+  GRADIENT_TWO,
+  GRADIENT_THREE,
+  GRADIENT_FOUR
 } from "../utils/color.js";
 import GSAP from "gsap";
 
 export default class Button {
-  constructor({ element }) {
+  constructor({ buttonTitle, element }) {
+    this.buttonTitle = buttonTitle;
     this.element = element;
 
+    this.canvas = document.querySelector(".webgl");
+    this.onCreate();
+
     this.addEventListener();
+    this.addClickScrollEventListener();
+  }
+
+  onCreate() {
+    this.canvas.style.backgroundImage = JSON.parse(
+      localStorage.getItem("color")
+    );
   }
 
   onClick() {
-    let color = document.body.style.backgroundColor;
+    let color = this.canvas.style.backgroundImage;
 
-    if (color === "rgb(26, 26, 26)") {
-      GSAP.to("body", {
-        backgroundColor: COLOR_RUSSET
+    if (color === GRADIENT_ONE) {
+      GSAP.to(this.canvas, {
+        backgroundImage: GRADIENT_FOUR
       });
 
-      this.saveColor(COLOR_RUSSET);
-    } else if (color === "rgb(125, 89, 90)") {
-      GSAP.to("body", {
-        backgroundColor: COLOR_WILLOW_GROVE
+      this.saveColor(GRADIENT_FOUR);
+    } else if (color === GRADIENT_FOUR) {
+      GSAP.to(this.canvas, {
+        backgroundImage: GRADIENT_TWO
       });
 
-      this.saveColor(COLOR_WILLOW_GROVE);
-    } else if (color === "rgb(101, 111, 98)") {
-      GSAP.to("body", {
-        backgroundColor: COLOR_NEVADA
+      this.saveColor(GRADIENT_TWO);
+    } else if (color === GRADIENT_TWO) {
+      GSAP.to(this.canvas, {
+        backgroundImage: GRADIENT_THREE
       });
 
-      this.saveColor(COLOR_NEVADA);
-    } else if (color === "rgb(93, 115, 126)") {
-      GSAP.to("body", {
-        backgroundColor: COLOR_COD_GREY
-      });
-
-      this.saveColor(COLOR_COD_GREY);
+      this.saveColor(GRADIENT_THREE);
     } else {
-      GSAP.to("body", {
-        backgroundColor: COLOR_RUSSET
+      GSAP.to(this.canvas, {
+        backgroundImage: GRADIENT_ONE
       });
 
-      this.saveColor(COLOR_RUSSET);
+      this.saveColor(GRADIENT_ONE);
     }
   }
 
-  addEventListener() {
-    this.onMouseClick = this.onClick.bind(this);
+  scrollPageToTop() {
+    window.scroll(0, 0);
+  }
 
-    this.element.addEventListener("click", this.onMouseClick);
+  addEventListener() {
+    this.element.addEventListener("click", this.onClick.bind(this));
+  }
+
+  addClickScrollEventListener() {
+    this.buttonTitle.addEventListener("click", this.scrollPageToTop.bind(this));
   }
 
   saveColor(color) {

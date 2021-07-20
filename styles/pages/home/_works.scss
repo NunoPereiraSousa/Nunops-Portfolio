@@ -5,18 +5,18 @@
 }
 
 .home__works__label {
-  margin: 50.2rem 0;
+  margin: 25.1rem auto 50.2rem;
+  max-width: 51.1rem;
   line-height: 1.6;
-  text-align: center;
 
   @include media("<tablet") {
-    margin: 34rem 0;
+    margin: 17rem 0 34rem;
   }
 
   @include media("<phone") {
-    margin: 20rem 0;
+    margin: 10rem 0 20rem;
     margin-left: 2rem;
-    text-align: left;
+    width: 35rem;
   }
 }
 

@@ -6,8 +6,8 @@
 
 .home__myself__label {
   line-height: 1.6;
-  margin: 50.2rem 0;
-  text-align: center;
+  margin: 50.2rem auto;
+  max-width: 51.1rem;
 
   @include media("<=tablet") {
     margin: 34rem 0;
@@ -16,7 +16,7 @@
   @include media("<phone") {
     margin: 20rem 0;
     margin-left: 2rem;
-    text-align: left;
+    width: 35rem;
   }
 }
 

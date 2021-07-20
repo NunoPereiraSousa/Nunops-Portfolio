@@ -463,6 +463,7 @@ html {
   font-size: calc(100vw / 1920 * 10);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
   overflow-x: hidden;
   overscroll-behavior: none;
   width: 100%;
@@ -475,8 +476,8 @@ html {
 }
 
 body {
+  scroll-behavior: smooth;
   /* Add background-color, color and font-family */
-  background-color: #1a1a1a;
   color: #f6f5f1;
   font-family: "Supreme";
   text-transform: uppercase;
@@ -493,6 +494,10 @@ body {
 
 body::-webkit-scrollbar {
   display: none;
+}
+
+.content {
+  height: 100%;
 }
 
 [data-animation="paragraph"] span,
@@ -588,7 +593,6 @@ body::-webkit-scrollbar {
 }
 
 .navigation {
-  mix-blend-mode: difference;
   pointer-events: none;
   position: fixed;
   z-index: 4;
@@ -676,12 +680,7 @@ body::-webkit-scrollbar {
 .footer__name {
   margin-top: 3rem;
   fill: #f6f5f1;
-}
-
-@media (max-width: 767px) {
-  .footer__name {
-    margin-bottom: 1.5rem;
-  }
+  margin-bottom: 1.5rem;
 }
 
 .webgl {
@@ -689,6 +688,10 @@ body::-webkit-scrollbar {
   z-index: -1;
   top: 0;
   left: 0;
+  /* #1 */
+  /* #2 */
+  /* #3 */
+  background-image: linear-gradient(315deg, #b38f8c 0%, #457596 54%);
 }
 
 .noise::before {
@@ -1057,8 +1060,8 @@ body::-webkit-scrollbar {
 
 .home__myself__label {
   line-height: 1.6;
-  margin: 50.2rem 0;
-  text-align: center;
+  margin: 50.2rem auto;
+  max-width: 51.1rem;
 }
 
 @media (max-width: 1024px) {
@@ -1071,7 +1074,7 @@ body::-webkit-scrollbar {
   .home__myself__label {
     margin: 20rem 0;
     margin-left: 2rem;
-    text-align: left;
+    width: 35rem;
   }
 }
 
@@ -1218,22 +1221,22 @@ body::-webkit-scrollbar {
 }
 
 .home__works__label {
-  margin: 50.2rem 0;
+  margin: 25.1rem auto 50.2rem;
+  max-width: 51.1rem;
   line-height: 1.6;
-  text-align: center;
 }
 
 @media (max-width: 1023px) {
   .home__works__label {
-    margin: 34rem 0;
+    margin: 17rem 0 34rem;
   }
 }
 
 @media (max-width: 767px) {
   .home__works__label {
-    margin: 20rem 0;
+    margin: 10rem 0 20rem;
     margin-left: 2rem;
-    text-align: left;
+    width: 35rem;
   }
 }
 

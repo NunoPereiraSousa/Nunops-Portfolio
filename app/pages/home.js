@@ -13,6 +13,7 @@ export default class Home extends Page {
       element: ".home",
       elements: {
         navigation: document.querySelector(".navigation"),
+        up: "#up",
         title: ".home__title",
         wrapper: ".home__wrapper",
         button: ".home__link",
@@ -29,6 +30,7 @@ export default class Home extends Page {
     new Canvas();
 
     this.link = new Button({
+      buttonTitle: this.elements.up,
       element: this.elements.button
     });
 
