@@ -18,9 +18,9 @@ export default class Button {
     this.element = element;
 
     this.canvas = document.querySelector(".webgl");
-    this.onCreate();
+    // this.onCreate();
 
-    this.addEventListener();
+    // this.addEventListener();
     this.addClickScrollEventListener();
   }
 

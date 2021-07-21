@@ -521,6 +521,7 @@ body::-webkit-scrollbar {
           transform-origin: 0 0;
   z-index: 5;
   width: 100vw;
+  display: none;
 }
 
 .preloader--loaded {
@@ -684,15 +685,25 @@ body::-webkit-scrollbar {
   margin-bottom: 1.5rem;
 }
 
+.home__intro__canvas {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  opacity: 0.65;
+}
+
 .webgl {
+  display: block;
   position: fixed;
   z-index: -1;
   top: 0;
   left: 0;
   /* #1 */
+  background-image: linear-gradient(315deg, #865f5c 0%, #153042 54%);
   /* #2 */
   /* #3 */
-  background-image: linear-gradient(315deg, #b38f8c 0%, #457596 54%);
 }
 
 .noise::before {

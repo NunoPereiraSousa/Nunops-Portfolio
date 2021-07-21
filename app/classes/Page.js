@@ -27,11 +27,11 @@ export default class Page {
     //   scroll: this.scroll
     // });
 
-    let currentColor = JSON.parse(localStorage.getItem("color"));
+    // let currentColor = JSON.parse(localStorage.getItem("color"));
 
-    gsap.to("body", {
-      backgroundColor: currentColor
-    });
+    // gsap.to(this.selectorChildren.canvas, {
+    //   backgroundImage: currentColor
+    // });
 
     each(this.selectorChildren, (entry, key) => {
       if (

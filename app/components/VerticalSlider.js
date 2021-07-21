@@ -28,7 +28,7 @@ export default class VerticalSlider {
 
     this.animate.to(this.title, {
       xPercent: 0,
-      duration: 6,
+      duration: 10,
       repeat: -1,
       overwrite: true,
       ease: "none"

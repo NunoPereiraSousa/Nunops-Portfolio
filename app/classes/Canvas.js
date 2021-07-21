@@ -2,19 +2,13 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import fragment from "../shaders/fragment.glsl";
 import vertex from "../shaders/vertex.glsl";
+import fragment2 from "../shaders/fragment2.glsl";
+import vertex2 from "../shaders/vertex2.glsl";
 import gsap from "gsap";
 import mockup from "../../img/MelchiCover.jpg";
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
-
-/*------------------------------
-onPage Load
-------------------------------*/
-
-// window.addEventListener('load', () => {
-//   initSmoothScroll();
-// });
 
 export default class Canvas {
   constructor() {
@@ -35,10 +29,6 @@ export default class Canvas {
     this.mockup = mockup;
     this.materials = [];
 
-    /*------------------------------
-    Scroll Object
-    ------------------------------*/
-
     this.scroll = {
       current: 0,
       target: 0,
@@ -56,20 +46,13 @@ export default class Canvas {
     this.raycaster = new THREE.Raycaster();
     this.mouse = new THREE.Vector2();
 
-    // this.addImages();
-    // this.setImagesPositionBehind();
-
-    // this.handleScrollContainersStyles();
-    // this.handleDocumentBodySettings();
-
     this.initSmoothScroll();
 
     this.onMouseMovement();
 
     this.resize();
     this.setupResize();
-    // this.addObjects();
-    this.mergeHtmlWebGl();
+    // this.mergeHtmlWebGl();
 
     this.composerPass();
     this.render();
@@ -262,27 +245,6 @@ export default class Canvas {
     return (fov / Math.PI) * 180;
   }
 
-  addObjects() {
-    this.sphereGeometry = new THREE.SphereBufferGeometry(45, 100, 100);
-    // this.sphereMaterial = new THREE.MeshBasicMaterial({ color: 0xffff00 });
-
-    this.sphereMaterial = new THREE.ShaderMaterial({
-      wireframe: false,
-      uniforms: {
-        time: { value: this.time },
-        // uTexture: { value: new THREE.TextureLoader().load(texture) },
-        resolution: { value: new THREE.Vector2() }
-      },
-      vertexShader: vertexMesh,
-      fragmentShader: fragmentMesh
-    });
-
-    this.mesh = new THREE.Mesh(this.sphereGeometry, this.sphereMaterial);
-    this.mesh.position.z = -10;
-
-    this.scene.add(this.mesh);
-  }
-
   onMouseMovement() {
     window.addEventListener(
       "mousemove",
@@ -361,7 +323,7 @@ export default class Canvas {
         // float area = smoothstep(0.3,0.,vUv.y);
         // area = pow(area, 4.);
         // newUV.x -= (vUv.x - 0.5)*0.03*area*scrollSpeed;
-        float area = smoothstep(0.3,0.,vUv.y);
+        float area = smoothstep(0.25,0.,vUv.y);
         newUV.x -= ((vUv.x + area * 0.5) - 1.) *0.085*area;
 
         gl_FragColor = texture2D( tDiffuse, newUV);
@@ -379,9 +341,6 @@ export default class Canvas {
 
   render() {
     this.time += 0.05;
-    // this.mesh.rotation.x = this.time / 80;
-    // this.mesh.rotation.y = this.time / 80;
-    // this.sphereMaterial.uniforms.time.value = this.time;
 
     this.currentScroll = this.scroll.current;
 

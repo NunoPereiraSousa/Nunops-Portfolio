@@ -4,11 +4,11 @@ import Canvas from "../classes/Canvas.js";
 import gsap from "gsap";
 import Page from "../classes/Page.js";
 import VerticalSlider from "../components/VerticalSlider.js";
+import HeroCanvas from "../classes/HeroCanvas.js";
 
 export default class Home extends Page {
   constructor() {
     super({
-      // passing the id to the parent Class (Page.js)
       id: "home",
       element: ".home",
       elements: {
@@ -28,6 +28,7 @@ export default class Home extends Page {
     super.create();
 
     new Canvas();
+    new HeroCanvas();
 
     this.link = new Button({
       buttonTitle: this.elements.up,
