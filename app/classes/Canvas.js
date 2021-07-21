@@ -59,8 +59,10 @@ export default class Canvas {
     // this.addImages();
     // this.setImagesPositionBehind();
 
-    this.handleScrollContainersStyles();
-    this.handleDocumentBodySettings();
+    // this.handleScrollContainersStyles();
+    // this.handleDocumentBodySettings();
+
+    this.initSmoothScroll();
 
     this.onMouseMovement();
 
@@ -90,10 +92,6 @@ export default class Canvas {
     this.scrollable.style.position = "absolute";
     this.scrollable.style.willChange = "transform";
   }
-
-  /*------------------------------
-Handle Body Settings
-------------------------------*/
 
   handleDocumentBodySettings() {
     if (this.scrollable) {

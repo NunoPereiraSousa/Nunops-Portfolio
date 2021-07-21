@@ -1080,6 +1080,7 @@ body::-webkit-scrollbar {
 }
 
 .home__myself__title {
+  display: inline-block;
   margin-bottom: 26.6rem;
   white-space: nowrap;
 }
