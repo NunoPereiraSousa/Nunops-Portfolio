@@ -1,12 +1,6 @@
-.home__myself {
-}
-
-.home__myself__wrapper {
-}
-
 .home__myself__label {
   line-height: 1.6;
-  margin: 50.2rem auto;
+  margin: 40.2rem auto;
   max-width: 51.1rem;
 
   @include media("<=tablet") {
@@ -39,9 +33,6 @@
   @include media("<phone") {
     margin-bottom: 10.8rem;
   }
-}
-
-.home__myself__box {
 }
 
 .home__myself__description {

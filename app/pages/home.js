@@ -1,10 +1,5 @@
-import Button from "../classes/Button.js";
-import Canvas from "../classes/Canvas.js";
-
-import gsap from "gsap";
 import Page from "../classes/Page.js";
 import VerticalSlider from "../components/VerticalSlider.js";
-import HeroCanvas from "../classes/HeroCanvas.js";
 
 export default class Home extends Page {
   constructor() {

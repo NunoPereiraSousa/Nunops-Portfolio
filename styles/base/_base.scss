@@ -1,18 +1,16 @@
 html {
   @extend %cover;
+
   font-size: calc(100vw / 1920 * 10);
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
+  width: 100%;
 
   @include media("<=tablet") {
     font-size: 10px;
   }
-
-  // position: fixed;
-  overflow-x: hidden;
-  overscroll-behavior: none;
-  width: 100%;
 }
 
 body {
@@ -20,18 +18,16 @@ body {
   @extend %description-15;
 
   @include media("<=desktop") {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   color: $color-pampas;
   font-family: $font-supreme;
-  text-transform: uppercase;
-  -webkit-overflow-scrolling: touch;
   height: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
-
-  // position: fixed;
+  text-transform: uppercase;
+  -webkit-overflow-scrolling: touch;
 }
 
 body::-webkit-scrollbar {

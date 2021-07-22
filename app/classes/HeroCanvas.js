@@ -1,9 +1,6 @@
 import * as THREE from "three";
 import fragment from "../shaders/fragment2.glsl";
 import vertex from "../shaders/vertex2.glsl";
-import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
-import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
-import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
 import gsap from "gsap";
 
 export default class HeroCanvas {

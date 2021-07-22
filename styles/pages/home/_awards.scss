@@ -1,8 +1,5 @@
-.home__awards {
-}
-
 .home__awards__label {
-  margin: 50.2rem 0;
+  margin: 40.2rem 0;
   text-align: center;
 
   @include media("<tablet") {
@@ -32,9 +29,6 @@
   @include media("<phone") {
     margin-bottom: 10.8rem;
   }
-}
-
-.home__awards__list {
 }
 
 .home__awards__list__item {

@@ -1,13 +1,7 @@
-.home__services {
-}
-
-.home__services__wrapper {
-}
-
 .home__services__label {
-  margin: 50.2rem auto;
-  max-width: 51.4rem;
   line-height: 1.6;
+  margin: 40.2rem auto;
+  max-width: 51.4rem;
 
   @include media("<tablet") {
     margin: 34rem auto;
@@ -21,6 +15,7 @@
 
 .home__services__title {
   @extend %title-200;
+
   display: inline-block;
   margin-bottom: 26.6rem;
   white-space: nowrap;
@@ -41,10 +36,9 @@
 
 .home__services__list {
   align-items: start;
-  flex-wrap: wrap;
   display: flex;
+  flex-wrap: wrap;
   grid-template-rows: auto;
-  // grid-row-gap: 150px;
   margin-left: 4rem;
   margin-right: 4rem;
 
@@ -61,11 +55,6 @@
 
 .home__services__list__link {
   display: block;
-  // @extend %title-200;
-
-  // span {
-  //   display: inline-block;
-  // }
 
   &:nth-child(odd):not(:first-of-type) {
     display: block;

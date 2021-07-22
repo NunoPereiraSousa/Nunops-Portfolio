@@ -2,8 +2,6 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import fragment from "../shaders/fragment.glsl";
 import vertex from "../shaders/vertex.glsl";
-import fragment2 from "../shaders/fragment2.glsl";
-import vertex2 from "../shaders/vertex2.glsl";
 import gsap from "gsap";
 import mockup from "../../img/MelchiCover.jpg";
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
@@ -166,7 +164,6 @@ export default class Canvas {
           value: 0
         }
       },
-      // side: THREE.DoubleSide,
       fragmentShader: fragment,
       vertexShader: vertex
     });
@@ -246,10 +243,8 @@ export default class Canvas {
         this.mouse.x = (event.clientX / this.options.width) * 2 - 1;
         this.mouse.y = -(event.clientY / this.options.height) * 2 + 1;
 
-        // update the picking ray with the camera and mouse position
         this.raycaster.setFromCamera(this.mouse, this.camera);
 
-        // calculate objects intersecting the picking ray
         const intersects = this.raycaster.intersectObjects(this.scene.children);
 
         if (intersects.length > 0) {
@@ -262,9 +257,6 @@ export default class Canvas {
   }
 
   resize() {
-    // this.height = this.options.height;
-    // this.width = this.options.width;
-
     this.options.height = window.innerHeight;
     this.options.width = window.innerWidth;
 
@@ -291,7 +283,6 @@ export default class Canvas {
     this.renderPass = new RenderPass(this.scene, this.camera);
     this.composer.addPass(this.renderPass);
 
-    //custom shader pass
     var counter = 0.0;
     this.myEffect = {
       uniforms: {
@@ -338,8 +329,6 @@ export default class Canvas {
 
     this.currentScroll = this.scroll.current;
 
-    // this.customPass.uniforms.scrollSpeed.value = this.time / 2;
-
     this.materials.forEach(material => {
       material.uniforms.time.value = this.time;
     });
@@ -350,7 +339,6 @@ export default class Canvas {
       this.setScalePosition(mesh);
     });
 
-    // this.renderer.render(this.scene, this.camera);
     this.composer.render();
 
     requestAnimationFrame(this.render.bind(this));
