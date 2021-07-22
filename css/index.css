@@ -520,7 +520,6 @@ body::-webkit-scrollbar {
           transform-origin: 0 0;
   z-index: 5;
   width: 100vw;
-  display: none;
 }
 
 .preloader--loaded {

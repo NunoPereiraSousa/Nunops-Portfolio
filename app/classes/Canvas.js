@@ -52,7 +52,7 @@ export default class Canvas {
 
     this.resize();
     this.setupResize();
-    // this.mergeHtmlWebGl();
+    this.mergeHtmlWebGl();
 
     this.composerPass();
     this.render();

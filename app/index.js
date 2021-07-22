@@ -9,7 +9,7 @@ class App {
     this.pages = {};
 
     this.createContent();
-    // this.createPreloader();
+    this.createPreloader();
 
     this.createPages();
 
