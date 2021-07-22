@@ -955,10 +955,6 @@ body::-webkit-scrollbar {
   }
 }
 
-.home__works__list__link {
-  display: block;
-}
-
 .home__works__list__link:nth-child(odd):not(:first-of-type) {
   margin-top: -15%;
 }

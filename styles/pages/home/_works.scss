@@ -55,8 +55,6 @@
 }
 
 .home__works__list__link {
-  display: block;
-
   &:nth-child(odd):not(:first-of-type) {
     margin-top: -15%;
 
