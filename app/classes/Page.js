@@ -16,8 +16,6 @@ export default class Page {
       animationsLines: "[data-animation='line']",
       animationsSliders: "[data-animation='slider']"
     };
-
-    this.create();
   }
 
   create() {
@@ -27,7 +25,7 @@ export default class Page {
     new Canvas();
     new HeroCanvas();
 
-    this.link = new Button({
+    new Button({
       buttonTitle: this.selectorChildren.up,
       element: this.selectorChildren.button
     });

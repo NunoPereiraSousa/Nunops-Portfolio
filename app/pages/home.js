@@ -21,16 +21,12 @@ export default class Home extends Page {
       }
     });
 
-    this.resize();
-  }
-
-  create() {
-    super.create();
-
     this.myselfCarousel();
     this.worksCarousel();
     this.awardsCarousel();
     this.servicesCarousel();
+
+    this.resize();
   }
 
   myselfCarousel() {
