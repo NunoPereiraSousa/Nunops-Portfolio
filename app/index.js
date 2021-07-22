@@ -1,4 +1,3 @@
-import Canvas from "./classes/Canvas.js";
 import Home from "./pages/home.js";
 import Preloader from "./components/Preloader";
 import gsap from "gsap";
@@ -9,7 +8,7 @@ class App {
     this.pages = {};
 
     this.createContent();
-    this.createPreloader();
+    // this.createPreloader();
 
     this.createPages();
 

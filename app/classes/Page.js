@@ -1,6 +1,8 @@
 import gsap from "gsap";
 import Canvas from "./Canvas.js";
 import each from "lodash/each";
+import Button from "../classes/Button.js";
+import HeroCanvas from "../classes/HeroCanvas.js";
 
 export default class Page {
   constructor({ id, element, elements }) {
@@ -22,16 +24,19 @@ export default class Page {
     this.element = document.querySelector(this.selector);
     this.elements = {};
 
-    // new Canvas({
-    //   domElement: this.selectorChildren.canvas,
-    //   scroll: this.scroll
-    // });
+    new Canvas();
+    new HeroCanvas();
 
-    // let currentColor = JSON.parse(localStorage.getItem("color"));
+    this.link = new Button({
+      buttonTitle: this.selectorChildren.up,
+      element: this.selectorChildren.button
+    });
 
-    // gsap.to(this.selectorChildren.canvas, {
-    //   backgroundImage: currentColor
-    // });
+    let currentColor = JSON.parse(localStorage.getItem("color"));
+
+    gsap.to(this.selectorChildren.canvas, {
+      backgroundImage: currentColor
+    });
 
     each(this.selectorChildren, (entry, key) => {
       if (

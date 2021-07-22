@@ -3,8 +3,8 @@ import GSAP from "gsap";
 
 export default class Button {
   constructor({ buttonTitle, element }) {
-    this.buttonTitle = buttonTitle;
-    this.element = element;
+    this.buttonTitle = document.querySelector(buttonTitle);
+    this.element = document.querySelector(element);
 
     this.canvas = document.querySelector(".webgl");
 

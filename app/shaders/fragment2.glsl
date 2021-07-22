@@ -1,5 +1,6 @@
 varying float pulse;
 varying vec2 vUv;
+varying vec3 vNormal;
 
 uniform float time;
 

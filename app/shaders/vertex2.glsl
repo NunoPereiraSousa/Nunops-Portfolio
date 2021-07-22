@@ -19,7 +19,8 @@ void main()
 
     float proximity = 1. - map(dist, 0., 0.8, 0., 1.);
 
-    newPosition.z = 5. * sin(length(position) * 10. + time * 5.);
+    // newPosition.z = 5. * sin(length(position) * 10. + time * 5.);
+     newPosition.z = 5. * sin(length(position) * 4000. + time * 5.);
 
     // second theme
     // newPosition.z = 2. * sin(length(proximity) + time * 5.);

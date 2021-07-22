@@ -17,7 +17,7 @@
   }
 
   // REMOVE THIS FOR PRODUCTION
-  // display: none;
+  display: none;
 }
 
 .preloader__number {
@@ -46,6 +46,7 @@
 
 .preloader__number__label {
   display: inline-block;
+  opacity: 0;
 }
 
 .preloader__box {
@@ -66,7 +67,7 @@
   animation: spin 4s linear infinite;
   fill: $color-cod-grey;
   height: 1.8rem;
-  transition: all 0.8s;
+  // transition: all 0.8s;
   width: 1.8rem;
 
   @include media("<=tablet") {
@@ -85,10 +86,5 @@
 
   display: inline-block;
   font-weight: 500;
-}
-
-.preloader__graphics__box {
-}
-
-.stars {
+  opacity: 0;
 }

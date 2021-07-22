@@ -15,6 +15,13 @@ export default class HeroCanvas {
       height: window.innerHeight
     };
 
+    this.geometryOptions = {
+      width: window.innerWidth / 1.25,
+      height: window.innerHeight / 1.25
+    };
+
+    this.meshes = [];
+
     this.time = 0;
 
     this.raycaster = new THREE.Raycaster();
@@ -23,10 +30,9 @@ export default class HeroCanvas {
     this.addCamera();
     this.addRenderer();
 
-    this.addObjects();
-
     this.onMouseMovement();
 
+    this.addObjects();
     this.resize();
     this.setupResize();
 
@@ -67,19 +73,16 @@ export default class HeroCanvas {
     window.addEventListener(
       "mousemove",
       event => {
-        this.mouse.x = (event.clientX / this.options.width) * 2 - 1;
-        this.mouse.y = -(event.clientY / this.options.height) * 2 + 1;
+        this.mouse.x = (event.clientX / this.options.width / 1.25) * 2 - 1;
+        this.mouse.y = -(event.clientY / this.options.height / 1.25) * 2 + 1;
 
-        // update the picking ray with the camera and mouse position
         this.raycaster.setFromCamera(this.mouse, this.camera);
 
-        // calculate objects intersecting the picking ray
         const intersects = this.raycaster.intersectObjects(this.scene.children);
 
         if (intersects.length > 0) {
           let object = intersects[0].object;
           object.material.uniforms.hover.value = intersects[0].uv;
-          object.material.uniforms.mouse.value = intersects[0].point;
         }
       },
       false
@@ -87,12 +90,7 @@ export default class HeroCanvas {
   }
 
   addObjects() {
-    this.geometry = new THREE.PlaneBufferGeometry(
-      this.options.width / 1.25,
-      this.options.height / 1.25,
-      40,
-      40
-    );
+    this.geometry = new THREE.PlaneBufferGeometry(1, 1, 40, 40);
     this.material = new THREE.ShaderMaterial({
       uniforms: {
         time: { value: 0 },
@@ -101,13 +99,13 @@ export default class HeroCanvas {
           value: 0
         }
       },
-      vertexShader: vertex,
       fragmentShader: fragment,
-      side: THREE.DoubleSide,
+      vertexShader: vertex,
       wireframe: true
     });
 
     this.mesh = new THREE.Mesh(this.geometry, this.material);
+    this.setMeshScale(this.mesh);
     this.scene.add(this.mesh);
 
     this.canvas.addEventListener("mouseenter", () => {
@@ -125,6 +123,10 @@ export default class HeroCanvas {
         ease: "expo.out"
       });
     });
+  }
+
+  setMeshScale(mesh) {
+    mesh.scale.set(this.options.width / 1.25, this.options.height / 1.25, 1);
   }
 
   resize() {
@@ -146,6 +148,8 @@ export default class HeroCanvas {
   render() {
     this.time += 0.05;
     this.material.uniforms.time.value = this.time / 30;
+
+    this.setMeshScale(this.mesh);
 
     this.renderer.render(this.scene, this.camera);
 

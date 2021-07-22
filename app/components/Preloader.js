@@ -20,7 +20,7 @@ export default class Preloader {
     this.elements = {
       title: document.querySelector(".preloader__number__label"),
       label: document.querySelector(".preloader__title"),
-      graphics: document.querySelectorAll(".stars"),
+      graphics: document.querySelectorAll(".preloader__graphics__box"),
       images: document.querySelectorAll("img"),
       curtain: document.querySelector(".preloader__curtain")
     };
@@ -48,8 +48,20 @@ export default class Preloader {
 
     this.allSiteImages = document.querySelectorAll("img");
 
+    this.loadFonts();
+
     // this.onCounterLoaded();
-    this.preloadImages();
+    // this.preloadImages();
+  }
+
+  loadFonts() {
+    this.supreme = new FontFaceObserver("Supreme");
+    this.bigilla = new FontFaceObserver("Bigilla");
+
+    Promise.all([this.supreme.load(), this.bigilla.load()]).then(font => {
+      console.log(font, "fonts loaded");
+      this.afterFontsAreLoaded();
+    });
   }
 
   preloadImages() {
@@ -67,7 +79,7 @@ export default class Preloader {
       setTimeout(() => {
         console.log(done);
         this.updateProcess();
-      }, 1000);
+      }, 2000);
     });
   }
 
@@ -125,7 +137,7 @@ export default class Preloader {
     // this.beforeLoaded();
 
     setTimeout(() => {
-      this.onLoaded();
+      // this.onLoaded();
     }, 50000); // 2000
   }
 
@@ -135,6 +147,7 @@ export default class Preloader {
    */
   onLoaded() {
     window.scroll(0, 0);
+
     return new Promise(resolve => {
       this.animateOut = GSAP.timeline({
         delay: 1.25
@@ -147,24 +160,21 @@ export default class Preloader {
         ease: "expo.in"
       });
 
-      each(this.elements.graphics, svg => {
-        this.animateOut.to(
-          svg,
-          {
-            autoAlpha: 0,
-            filter: "blur(10px)",
-            duration: 0.8,
-            stagger: 0.05,
-            ease: "expo.out"
-          },
-          "-=0.75"
-        );
-      });
+      // each(this.elements.graphics, svg => {
+      //   this.animateOut.to(svg, {
+      //     autoAlpha: 0,
+      //     filter: "blur(10px)",
+      //     duration: 1,
+      //     stagger: 0.05,
+      //     ease: "expo.out"
+      //   });
+      // });
 
-      this.animateOut.to(this.elements.label, {
+      this.animateOut.to([this.elements.label, this.elements.graphics], {
         autoAlpha: 0,
         filter: "blur(10px)",
-        duration: 0.8,
+        duration: 1,
+        stagger: 0.05,
         ease: "expo.out"
       });
 
@@ -183,6 +193,22 @@ export default class Preloader {
       this.animateOut.call(_ => {
         this.destroy();
       });
+    });
+  }
+
+  afterFontsAreLoaded() {
+    this.animateIn = GSAP.timeline({
+      delay: 1
+    });
+
+    this.animateIn.to([this.elements.title, this.elements.label], {
+      autoAlpha: 1,
+      duration: 1,
+      ease: "expo.out"
+    });
+
+    this.animateIn.call(_ => {
+      this.preloadImages();
     });
   }
 

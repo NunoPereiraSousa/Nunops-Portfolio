@@ -27,14 +27,6 @@ export default class Home extends Page {
   create() {
     super.create();
 
-    new Canvas();
-    new HeroCanvas();
-
-    this.link = new Button({
-      buttonTitle: this.elements.up,
-      element: this.elements.button
-    });
-
     this.myselfCarousel();
     this.worksCarousel();
     this.awardsCarousel();
