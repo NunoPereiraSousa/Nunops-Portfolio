@@ -476,14 +476,13 @@ html {
 }
 
 body {
-  scroll-behavior: smooth;
-  /* Add background-color, color and font-family */
   color: #f6f5f1;
   font-family: "Supreme";
   text-transform: uppercase;
   -webkit-overflow-scrolling: touch;
   height: 100%;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 @media (max-width: 1920px) {
@@ -690,8 +689,7 @@ body::-webkit-scrollbar {
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 0;
-  opacity: 0.65;
+  opacity: 0.6;
 }
 
 .webgl {
@@ -701,7 +699,6 @@ body::-webkit-scrollbar {
   top: 0;
   left: 0;
   /* #1 */
-  background-image: linear-gradient(315deg, #865f5c 0%, #153042 54%);
   /* #2 */
   /* #3 */
 }

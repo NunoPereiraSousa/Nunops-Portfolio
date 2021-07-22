@@ -3,8 +3,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 0;
-  opacity: 0.65;
+  opacity: 0.6;
 }
 
 .webgl {
@@ -18,45 +17,30 @@
   // filter: blur(10px);
 
   /* #1 */
-  background-image: linear-gradient(315deg, #865f5c 0%, #153042 54%);
-
-  // background-image: linear-gradient(315deg, #564e74 0%, #2a5470 74%);
-
-  // background-image: linear-gradient(315deg, #637081 0%, #7c98b3 74%);
+  // background-image: linear-gradient(
+  //   315deg,
+  //   rgb(75, 48, 46) 0%,
+  //   rgb(28, 47, 59) 44%
+  // );
 
   /* #2 */
   // background-image: linear-gradient(
-  //   to right,
-  //   rgb(105, 138, 122) 0%,
-  //   rgb(93, 65, 87) 100%
+  //   316deg,
+  //   rgb(88, 65, 124) 0%,
+  //   rgb(64, 61, 87) 44%
+  // );
+
+  // background-image: linear-gradient(
+  //   316deg,
+  //   rgb(35, 70, 70) 0%,
+  //   rgb(31, 44, 68) 54%
   // );
 
   /* #3 */
-  // background-image: linear-gradient(
-  //   -55deg,
-  //   rgb(26, 26, 26) 0%,
-  //   rgb(76, 74, 57) 25%,
-  //   rgb(145, 86, 101) 50%,
-  //   rgb(179, 122, 85) 75%
-  // );
-
-  // /* #4 */
-  // background: linear-gradient(
-  //   45deg,
-  //   rgb(139, 170, 170) 0%,
-  //   rgb(174, 139, 156) 100%
-  // );
 
   // background-image: linear-gradient(
   //   315deg,
-  //   rgb(179, 143, 140) 0%,
-  //   rgb(69, 117, 150) 54%
+  //   rgb(68, 27, 38) 0%,
+  //   rgb(22, 39, 61) 54%
   // );
-  // background-image: linear-gradient(315deg, #5c475f 0%, #00355e 54%);
-
-  // background-image: linear-gradient(315deg, #816763 0%, #1a1a1a 74%);
 }
-
-// canvas {
-//   display: block;
-// }

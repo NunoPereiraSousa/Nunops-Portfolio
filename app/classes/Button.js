@@ -1,15 +1,4 @@
-// import Component from "classes/Component";
-import {
-  COLOR_PAMPAS,
-  COLOR_COD_GREY,
-  COLOR_RUSSET,
-  COLOR_WILLOW_GROVE,
-  COLOR_NEVADA,
-  GRADIENT_ONE,
-  GRADIENT_TWO,
-  GRADIENT_THREE,
-  GRADIENT_FOUR
-} from "../utils/color.js";
+import { GRADIENT_ONE, GRADIENT_TWO, GRADIENT_THREE } from "../utils/color.js";
 import GSAP from "gsap";
 
 export default class Button {
@@ -18,9 +7,9 @@ export default class Button {
     this.element = element;
 
     this.canvas = document.querySelector(".webgl");
-    // this.onCreate();
 
-    // this.addEventListener();
+    this.onCreate();
+    this.addEventListener();
     this.addClickScrollEventListener();
   }
 
@@ -34,12 +23,6 @@ export default class Button {
     let color = this.canvas.style.backgroundImage;
 
     if (color === GRADIENT_ONE) {
-      GSAP.to(this.canvas, {
-        backgroundImage: GRADIENT_FOUR
-      });
-
-      this.saveColor(GRADIENT_FOUR);
-    } else if (color === GRADIENT_FOUR) {
       GSAP.to(this.canvas, {
         backgroundImage: GRADIENT_TWO
       });

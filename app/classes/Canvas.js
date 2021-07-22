@@ -121,8 +121,6 @@ export default class Canvas {
     if (this.scrollable) {
       this.scrollable.style.transform = `translateY(${-this.scroll.current}px)`;
     }
-
-    // window.requestAnimationFrame(siSmoothScroller);
   }
 
   initSmoothScroll() {
@@ -146,8 +144,6 @@ export default class Canvas {
     });
     this.renderer.setSize(this.options.width, this.options.height);
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio), 2);
-
-    // this.canvas.appendChild(this.renderer.domElement);
   }
 
   addCamera() {
@@ -169,7 +165,6 @@ export default class Canvas {
         hoverState: {
           value: 0
         }
-        // oceanTexture: { value: new THREE.TextureLoader().load(this.mockup) }
       },
       side: THREE.DoubleSide,
       fragmentShader: fragment,
@@ -182,7 +177,6 @@ export default class Canvas {
       let texture = new THREE.Texture(image);
       texture.needsUpdate = true;
       let geometry = new THREE.PlaneBufferGeometry(1, 1, 10, 10);
-      // let material = new THREE.MeshBasicMaterial({ map: texture });
       let material = this.material.clone();
 
       image.addEventListener("mouseenter", () => {

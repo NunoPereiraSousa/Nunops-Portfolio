@@ -79,6 +79,7 @@ export default class HeroCanvas {
         if (intersects.length > 0) {
           let object = intersects[0].object;
           object.material.uniforms.hover.value = intersects[0].uv;
+          object.material.uniforms.mouse.value = intersects[0].point;
         }
       },
       false
@@ -109,16 +110,12 @@ export default class HeroCanvas {
     this.mesh = new THREE.Mesh(this.geometry, this.material);
     this.scene.add(this.mesh);
 
-    let material = this.material.clone();
-
     this.canvas.addEventListener("mouseenter", () => {
       gsap.to(this.material.uniforms.hoverState, {
         duration: 1,
         value: 1,
         ease: "expo.out"
       });
-
-      console.log(this.material.uniforms.hoverState);
     });
 
     this.canvas.addEventListener("mouseout", () => {

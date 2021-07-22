@@ -4,7 +4,6 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
-  // font-size: 10px;
 
   @include media("<=tablet") {
     font-size: 10px;
@@ -19,20 +18,18 @@ html {
 body {
   @extend %cover;
   @extend %description-15;
-  scroll-behavior: smooth;
+
   @include media("<=desktop") {
     font-size: 15px;
   }
 
-  /* Add background-color, color and font-family */
-  // background-color: $color-cod-grey;
-  // background-image: linear-gradient(45deg, #8baaaa 0%, #ae8b9c 100%);
   color: $color-pampas;
   font-family: $font-supreme;
   text-transform: uppercase;
   -webkit-overflow-scrolling: touch;
   height: 100%;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 
   // position: fixed;
 }
