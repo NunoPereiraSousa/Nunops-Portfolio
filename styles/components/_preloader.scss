@@ -24,14 +24,20 @@
   margin-top: -10vh;
   overflow: hidden;
   text-align: center;
+  white-space: nowrap;
+
+  @include media("<tablet") {
+    transform: translateY(calc(-10vh + 4rem));
+  }
 
   @include media("<phone") {
-    width: 22.2rem;
     margin-top: 0;
+    transform: translateY(calc(-10vh));
   }
 }
 
-.preloader__number__label {
+.preloader__number__label,
+.preloader__number__year {
   display: inline-block;
   opacity: 0;
 }
@@ -45,6 +51,14 @@
   position: absolute;
   transform: translateX(-50%);
   width: 100%;
+
+  @include media("<tablet") {
+    bottom: calc(10vh + 12rem);
+  }
+
+  @include media("<phone") {
+    bottom: calc(10vh + 8rem);
+  }
 }
 
 .stars {

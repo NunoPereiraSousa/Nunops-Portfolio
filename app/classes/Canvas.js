@@ -32,7 +32,7 @@ export default class Canvas {
       target: 0,
       last: 0,
       limit: 0,
-      ease: 0.05
+      ease: 0.175
     };
 
     this.addCamera();

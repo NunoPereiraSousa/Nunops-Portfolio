@@ -1,6 +1,5 @@
-import each from "lodash/each";
 import GSAP from "gsap";
-import { split } from "../utils/text";
+import { split } from "../utils/text.js";
 import imagesLoaded from "imagesloaded";
 import FontFaceObserver from "fontfaceobserver";
 
@@ -8,6 +7,7 @@ export default class Preloader {
   constructor() {
     this.element = document.querySelector(".preloader");
     this.elements = {
+      year: document.querySelector(".preloader__number__year"),
       title: document.querySelector(".preloader__number__label"),
       label: document.querySelector(".preloader__title"),
       graphics: document.querySelectorAll(".preloader__graphics__box"),
@@ -56,9 +56,9 @@ export default class Preloader {
 
   updateProcess() {
     GSAP.to(this.elements.title, {
-      innerText: "100%",
+      innerText: "2000",
       snap: {
-        innerText: 1
+        innerText: 50
       },
       ease: "ease.out",
       duration: 3,
@@ -82,7 +82,7 @@ export default class Preloader {
         delay: 1.25
       });
 
-      this.animateOut.to(this.elements.title, {
+      this.animateOut.to([this.elements.year, this.elements.title], {
         y: "100%",
         duration: 0.9,
         stagger: 0.12,
@@ -119,11 +119,14 @@ export default class Preloader {
       delay: 1
     });
 
-    this.animateIn.to([this.elements.title, this.elements.label], {
-      autoAlpha: 1,
-      duration: 1,
-      ease: "expo.out"
-    });
+    this.animateIn.to(
+      [this.elements.year, this.elements.title, this.elements.label],
+      {
+        autoAlpha: 1,
+        duration: 1,
+        ease: "expo.out"
+      }
+    );
 
     this.animateIn.call(_ => {
       this.preloadImages();

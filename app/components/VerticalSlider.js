@@ -10,8 +10,6 @@ export default class VerticalSlider {
 
     this.initial_offset =
       ((2 * this.titleWidth) / this.containerWidth) * 100 * -1;
-
-    // this.resize();
   }
 
   slider() {

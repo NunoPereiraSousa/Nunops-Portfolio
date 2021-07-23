@@ -30,11 +30,16 @@ export default class Page {
       element: this.selectorChildren.button
     });
 
-    let currentColor = JSON.parse(localStorage.getItem("color"));
+    let currentColor =
+      JSON.parse(localStorage.getItem("color")) === null
+        ? "linear-gradient(315deg, rgb(68, 27, 38) 0%, rgb(22, 39, 61) 54%)"
+        : currentColor;
 
     gsap.to(this.selectorChildren.canvas, {
       backgroundImage: currentColor
     });
+
+    console.log(this.selectorChildren.canvas, currentColor);
 
     each(this.selectorChildren, (entry, key) => {
       if (

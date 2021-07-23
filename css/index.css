@@ -485,16 +485,26 @@ body::-webkit-scrollbar {
   margin-top: -10vh;
   overflow: hidden;
   text-align: center;
+  white-space: nowrap;
+}
+
+@media (max-width: 1023px) {
+  .preloader__number {
+    -webkit-transform: translateY(calc(-10vh + 4rem));
+            transform: translateY(calc(-10vh + 4rem));
+  }
 }
 
 @media (max-width: 767px) {
   .preloader__number {
-    width: 22.2rem;
     margin-top: 0;
+    -webkit-transform: translateY(calc(-10vh));
+            transform: translateY(calc(-10vh));
   }
 }
 
-.preloader__number__label {
+.preloader__number__label,
+.preloader__number__year {
   display: inline-block;
   opacity: 0;
 }
@@ -514,6 +524,18 @@ body::-webkit-scrollbar {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   width: 100%;
+}
+
+@media (max-width: 1023px) {
+  .preloader__box {
+    bottom: calc(10vh + 12rem);
+  }
+}
+
+@media (max-width: 767px) {
+  .preloader__box {
+    bottom: calc(10vh + 8rem);
+  }
 }
 
 .stars {
@@ -642,6 +664,12 @@ body::-webkit-scrollbar {
   left: 0;
   top: 0;
   opacity: 0.6;
+}
+
+@media (max-width: 767px) {
+  .home__intro__canvas {
+    opacity: 0.4;
+  }
 }
 
 .webgl {

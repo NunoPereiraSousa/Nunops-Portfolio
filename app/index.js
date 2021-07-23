@@ -1,5 +1,5 @@
 import Home from "./pages/home.js";
-import Preloader from "./components/Preloader";
+import Preloader from "./components/Preloader.js";
 
 class App {
   constructor() {
