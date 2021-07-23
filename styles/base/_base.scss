@@ -18,6 +18,10 @@ body {
   @extend %description-15;
 
   @include media("<=desktop") {
+    font-size: 15px;
+  }
+
+  @include media("<phone") {
     font-size: 14px;
   }
 

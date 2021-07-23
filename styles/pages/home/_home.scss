@@ -3,14 +3,6 @@
   @extend %center;
 
   height: 100vh;
-
-  @include media("<tablet") {
-    height: calc(100vh - (10vh + 8rem));
-  }
-
-  @include media("<phone") {
-    height: calc(100vh - (10vh + 4rem));
-  }
 }
 
 .home__title {

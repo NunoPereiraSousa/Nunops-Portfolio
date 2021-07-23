@@ -22,7 +22,12 @@ export default class Page {
     this.element = document.querySelector(this.selector);
     this.elements = {};
 
+    // if (window.innerWidth > 1200) {
+    //   new Canvas();
+    // }
+
     new Canvas();
+
     new HeroCanvas();
 
     new Button({
@@ -38,8 +43,6 @@ export default class Page {
     gsap.to(this.selectorChildren.canvas, {
       backgroundImage: currentColor
     });
-
-    console.log(this.selectorChildren.canvas, currentColor);
 
     each(this.selectorChildren, (entry, key) => {
       if (

@@ -4,8 +4,7 @@
 
   background: $color-pampas;
   color: $color-cod-grey;
-  flex-direction: column;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
   position: fixed;
   transform-origin: 0 0;
@@ -21,19 +20,9 @@
   @extend %title-200;
 
   max-width: 117.2rem;
-  margin-top: -10vh;
   overflow: hidden;
   text-align: center;
   white-space: nowrap;
-
-  @include media("<tablet") {
-    transform: translateY(calc(-10vh + 4rem));
-  }
-
-  @include media("<phone") {
-    margin-top: 0;
-    transform: translateY(calc(-10vh));
-  }
 }
 
 .preloader__number__label,
@@ -53,11 +42,7 @@
   width: 100%;
 
   @include media("<tablet") {
-    bottom: calc(10vh + 12rem);
-  }
-
-  @include media("<phone") {
-    bottom: calc(10vh + 8rem);
+    bottom: 3rem;
   }
 }
 

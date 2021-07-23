@@ -108,6 +108,10 @@
   opacity: 0;
 
   object-fit: cover;
+
+  @include media("<tablet") {
+    opacity: 1;
+  }
 }
 
 .home__services__list__desc {

@@ -440,6 +440,12 @@ body {
 
 @media (max-width: 1920px) {
   body {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
     font-size: 14px;
   }
 }
@@ -462,11 +468,7 @@ body::-webkit-scrollbar {
 .preloader {
   background: #f6f5f1;
   color: #1a1a1a;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
   position: fixed;
   -webkit-transform-origin: 0 0;
@@ -482,25 +484,9 @@ body::-webkit-scrollbar {
 
 .preloader__number {
   max-width: 117.2rem;
-  margin-top: -10vh;
   overflow: hidden;
   text-align: center;
   white-space: nowrap;
-}
-
-@media (max-width: 1023px) {
-  .preloader__number {
-    -webkit-transform: translateY(calc(-10vh + 4rem));
-            transform: translateY(calc(-10vh + 4rem));
-  }
-}
-
-@media (max-width: 767px) {
-  .preloader__number {
-    margin-top: 0;
-    -webkit-transform: translateY(calc(-10vh));
-            transform: translateY(calc(-10vh));
-  }
 }
 
 .preloader__number__label,
@@ -528,13 +514,7 @@ body::-webkit-scrollbar {
 
 @media (max-width: 1023px) {
   .preloader__box {
-    bottom: calc(10vh + 12rem);
-  }
-}
-
-@media (max-width: 767px) {
-  .preloader__box {
-    bottom: calc(10vh + 8rem);
+    bottom: 3rem;
   }
 }
 
@@ -692,18 +672,6 @@ body::-webkit-scrollbar {
 .home__intro {
   position: relative;
   height: 100vh;
-}
-
-@media (max-width: 1023px) {
-  .home__intro {
-    height: calc(100vh - (10vh + 8rem));
-  }
-}
-
-@media (max-width: 767px) {
-  .home__intro {
-    height: calc(100vh - (10vh + 4rem));
-  }
 }
 
 .home__title {
@@ -1127,8 +1095,9 @@ body::-webkit-scrollbar {
 }
 
 .home__works__list__media {
-  position: relative;
+  cursor: pointer;
   margin-top: 3rem;
+  position: relative;
 }
 
 @media (max-width: 767px) {
@@ -1252,9 +1221,15 @@ body::-webkit-scrollbar {
 }
 
 .home__works__list__media__image {
-  opacity: 1;
+  opacity: 0;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+@media (max-width: 1023px) {
+  .home__works__list__media__image {
+    opacity: 1;
+  }
 }
 
 .home__awards__label {
@@ -1499,6 +1474,12 @@ body::-webkit-scrollbar {
   opacity: 0;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+@media (max-width: 1023px) {
+  .home__services__list__media__image {
+    opacity: 1;
+  }
 }
 
 .home__services__list__desc {

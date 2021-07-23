@@ -32,7 +32,7 @@ export default class Canvas {
       target: 0,
       last: 0,
       limit: 0,
-      ease: 0.175
+      ease: this.options.width < 1200 ? 0.08 : 0.1
     };
 
     this.addCamera();
@@ -50,10 +50,33 @@ export default class Canvas {
 
     this.resize();
     this.setupResize();
-    this.mergeHtmlWebGl();
+    // this.handleMediaQuery();
+    // this.mergeHtmlWebGl();
 
     this.composerPass();
     this.render();
+  }
+
+  handleMediaQuery() {
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+
+    if (!mediaQuery.matches) {
+      this.mergeHtmlWebGl();
+    }
+
+    // const handleWidthChange = mediaQuery => {
+    //   console.log(mediaQuery);
+    //   if (mediaQuery.matches) {
+    //     initSmoothScroll();
+    //     mobileArtworksReveal();
+    //     mobileHeroImageReveal();
+    //   } else {
+    //     combinedGLFx();
+    //     bendHorizontalGlFx();
+    //   }
+    // };
+
+    // mediaQuery.addListener(handleWidthChange);
   }
 
   siLerp(start, end, time) {
@@ -173,8 +196,12 @@ export default class Canvas {
     htmlImages.forEach(image => {
       let texture = new THREE.Texture(image);
       texture.needsUpdate = true;
+      texture.anisotropy = this.renderer.capabilities.getMaxAnisotropy();
       let geometry = new THREE.PlaneBufferGeometry(1, 1, 10, 10);
       let material = this.material.clone();
+
+      this.materials.push(material);
+      material.uniforms.uImage.value = texture;
 
       image.addEventListener("mouseenter", () => {
         gsap.to(material.uniforms.hoverState, {
@@ -191,10 +218,6 @@ export default class Canvas {
           ease: "expo.out"
         });
       });
-
-      material.uniforms.uImage.value = texture;
-
-      this.materials.push(material);
 
       let mesh = new THREE.Mesh(geometry, material);
       mesh.userData.image = image;
@@ -266,6 +289,8 @@ export default class Canvas {
 
     this.renderer.setSize(this.options.width, this.options.height);
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    this.handleMediaQuery();
 
     this.allMeshes.forEach(mesh => {
       this.setScalePosition(mesh);

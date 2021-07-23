@@ -16,12 +16,20 @@ export default class Home extends Page {
       }
     });
 
+    this.height = window.innerHeight;
+    this.container = document.querySelector(".home__intro");
+
+    this.setHomeContainerHeight();
     this.myselfCarousel();
     this.worksCarousel();
     this.awardsCarousel();
     this.servicesCarousel();
 
     this.resize();
+  }
+
+  setHomeContainerHeight() {
+    this.container.style.height = `${this.height}px`;
   }
 
   myselfCarousel() {
@@ -61,6 +69,10 @@ export default class Home extends Page {
   }
 
   resize() {
-    window.addEventListener("resize", this.slider.resize());
+    window.addEventListener("resize", () => {
+      this.height = window.innerHeight;
+      this.slider.resize();
+      this.setHomeContainerHeight();
+    });
   }
 }

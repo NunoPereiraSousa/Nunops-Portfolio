@@ -171,8 +171,9 @@
 }
 
 .home__works__list__media {
-  position: relative;
+  cursor: pointer;
   margin-top: 3rem;
+  position: relative;
 
   @include media("<phone") {
     margin-top: 2rem;
@@ -269,7 +270,11 @@
 
 .home__works__list__media__image {
   @extend %cover;
-  opacity: 1;
+  opacity: 0;
 
   object-fit: cover;
+
+  @include media("<tablet") {
+    opacity: 1;
+  }
 }
