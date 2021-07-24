@@ -648,7 +648,7 @@ body::-webkit-scrollbar {
 
 @media (max-width: 767px) {
   .home__intro__canvas {
-    opacity: 0.4;
+    opacity: 0.55;
   }
 }
 
@@ -1335,9 +1335,17 @@ body::-webkit-scrollbar {
   display: inline-block;
 }
 
+.home__awards__list__column:nth-child(2) {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: 1 / 2 / 3 / 2;
+}
+
 @media (max-width: 767px) {
   .home__awards__list__column {
     line-height: 1.5;
+    font-size: 1.4rem;
   }
 }
 

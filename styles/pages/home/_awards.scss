@@ -81,7 +81,12 @@
 
   display: inline-block;
 
+  &:nth-child(2) {
+    grid-area: 1 / 2 / 3 / 2;
+  }
+
   @include media("<phone") {
     line-height: 1.5;
+    font-size: 1.4rem;
   }
 }

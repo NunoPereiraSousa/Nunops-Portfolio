@@ -26,6 +26,8 @@ export default class Home extends Page {
     this.servicesCarousel();
 
     this.resize();
+
+    console.log("Welcome! 🦉");
   }
 
   setHomeContainerHeight() {

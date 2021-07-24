@@ -22,13 +22,9 @@ export default class Page {
     this.element = document.querySelector(this.selector);
     this.elements = {};
 
-    // if (window.innerWidth > 1200) {
-    //   new Canvas();
-    // }
+    new HeroCanvas();
 
     new Canvas();
-
-    new HeroCanvas();
 
     new Button({
       buttonTitle: this.selectorChildren.up,

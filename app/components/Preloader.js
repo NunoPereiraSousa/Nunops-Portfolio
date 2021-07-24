@@ -48,6 +48,7 @@ export default class Preloader {
     this.imagesLoad = imagesLoaded(this.allSiteImages);
 
     this.imagesLoad.on("done", () => {
+      console.log("Images loaded! Ready to go 🚀");
       setTimeout(() => {
         this.updateProcess();
       }, 750);

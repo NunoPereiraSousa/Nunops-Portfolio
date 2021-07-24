@@ -32,7 +32,7 @@ export default class Canvas {
       target: 0,
       last: 0,
       limit: 0,
-      ease: this.options.width < 1200 ? 0.08 : 0.1
+      ease: this.options.width < 1200 ? 0.08 : 0.05
     };
 
     this.addCamera();
@@ -44,15 +44,12 @@ export default class Canvas {
     this.raycaster = new THREE.Raycaster();
     this.mouse = new THREE.Vector2();
 
-    this.initSmoothScroll();
-
     this.onMouseMovement();
 
     this.resize();
     this.setupResize();
-    // this.handleMediaQuery();
-    // this.mergeHtmlWebGl();
 
+    this.initSmoothScroll();
     this.composerPass();
     this.render();
   }
@@ -63,20 +60,6 @@ export default class Canvas {
     if (!mediaQuery.matches) {
       this.mergeHtmlWebGl();
     }
-
-    // const handleWidthChange = mediaQuery => {
-    //   console.log(mediaQuery);
-    //   if (mediaQuery.matches) {
-    //     initSmoothScroll();
-    //     mobileArtworksReveal();
-    //     mobileHeroImageReveal();
-    //   } else {
-    //     combinedGLFx();
-    //     bendHorizontalGlFx();
-    //   }
-    // };
-
-    // mediaQuery.addListener(handleWidthChange);
   }
 
   siLerp(start, end, time) {
@@ -100,7 +83,11 @@ export default class Canvas {
   handleDocumentBodySettings() {
     if (this.scrollable) {
       const scrollableBounds = this.scrollable.getBoundingClientRect();
-      const documentHeight = `${scrollableBounds.height}px`;
+      const documentHeight = `${
+        window.innerWidth < 1500
+          ? scrollableBounds.height
+          : scrollableBounds.height + 200
+      }px`;
 
       this.body.style.width = "100%";
       this.body.style.height = "100vh";
