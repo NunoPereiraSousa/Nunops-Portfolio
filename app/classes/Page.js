@@ -18,6 +18,9 @@ export default class Page {
     };
   }
 
+  /**
+   * On create each page component...
+   */
   create() {
     this.element = document.querySelector(this.selector);
     this.elements = {};
@@ -40,6 +43,8 @@ export default class Page {
       backgroundImage: currentColor
     });
 
+    // checks if each element inside the constructor is what... array, single type, ...
+    // and then gives it: document.querySelector(entry) / document.querySelectorAll(entry) / ...
     each(this.selectorChildren, (entry, key) => {
       if (
         entry instanceof window.HTMLElement ||

@@ -34,6 +34,9 @@ export default class Preloader {
     this.loadFonts();
   }
 
+  /**
+   * Load the website fonts
+   */
   loadFonts() {
     this.supreme = new FontFaceObserver("Supreme");
     this.bigilla = new FontFaceObserver("Bigilla");
@@ -44,17 +47,25 @@ export default class Preloader {
     });
   }
 
+  /**
+   * Preload all the website images
+   */
   preloadImages() {
     this.imagesLoad = imagesLoaded(this.allSiteImages);
 
+    // when all the images are loaded
     this.imagesLoad.on("done", () => {
       console.log("Images loaded! Ready to go 🚀");
       setTimeout(() => {
+        // the counter begins
         this.updateProcess();
       }, 750);
     });
   }
 
+  /**
+   * Counter (numbers) upgrade
+   */
   updateProcess() {
     GSAP.to(this.elements.title, {
       innerText: "2000",
@@ -115,6 +126,9 @@ export default class Preloader {
     });
   }
 
+  /**
+   * After fonts are loaded, the preloader content shows up
+   */
   afterFontsAreLoaded() {
     this.animateIn = GSAP.timeline({
       delay: 1
@@ -134,6 +148,9 @@ export default class Preloader {
     });
   }
 
+  /**
+   * Destroy the preloader after completed - removes it from the DOM
+   */
   destroy() {
     this.element.parentNode.removeChild(this.element);
   }

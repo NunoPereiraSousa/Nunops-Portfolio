@@ -30,10 +30,16 @@ export default class Home extends Page {
     console.log("Welcome! 🦉");
   }
 
+  /**
+   * Set home container (".home__intro") to the window height
+   */
   setHomeContainerHeight() {
     this.container.style.height = `${this.height}px`;
   }
 
+  /**
+   * Initialize the vertical sliders
+   */
   myselfCarousel() {
     this.slider = new VerticalSlider({
       spans: document.querySelectorAll(".spans"),
@@ -70,6 +76,9 @@ export default class Home extends Page {
     this.slider.slider();
   }
 
+  /**
+   * Resize event listener and actions
+   */
   resize() {
     window.addEventListener("resize", () => {
       this.height = window.innerHeight;

@@ -12,6 +12,9 @@ export default class VerticalSlider {
       ((2 * this.titleWidth) / this.containerWidth) * 100 * -1;
   }
 
+  /**
+   * GSAP vertical slider function
+   */
   slider() {
     this.containerWidth = this.title.getBoundingClientRect().width;
     this.titleWidth = this.spans[0].getBoundingClientRect().width;
@@ -33,10 +36,17 @@ export default class VerticalSlider {
     });
   }
 
+  /**
+   * Resize event
+   */
   resize() {
     window.addEventListener("resize", this.onSliderResize.bind(this));
   }
 
+  /**
+   * On resize window function
+   * Resets to the correct values
+   */
   onSliderResize() {
     this.containerWidth = this.title.getBoundingClientRect().width;
     this.titleWidth = this.spans[0].getBoundingClientRect().width;

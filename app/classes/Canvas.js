@@ -54,6 +54,10 @@ export default class Canvas {
     this.render();
   }
 
+  /**
+   * Handle and watch media query and its own actions/ logic
+   * Hide/ show webgl in mobile/ desktop devices
+   */
   handleMediaQuery() {
     const mediaQuery = window.matchMedia("(max-width: 768px)");
 
@@ -138,10 +142,16 @@ export default class Canvas {
     this.siSmoothScroller();
   }
 
+  /**
+   * Add scene controls - not being used
+   */
   addControls() {
     this.controls = new OrbitControls(this.camera, this.renderer.domElement);
   }
 
+  /**
+   * Add renderer to the scene
+   */
   addRenderer() {
     this.scene = new THREE.Scene();
 
@@ -154,6 +164,9 @@ export default class Canvas {
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio), 2);
   }
 
+  /**
+   * Add camera to the scene
+   */
   addCamera() {
     this.camera = new THREE.PerspectiveCamera(
       45,
@@ -164,6 +177,15 @@ export default class Canvas {
     this.camera.position.z = 50;
   }
 
+  /**
+   * Create a shader material
+   *  Add uniforms to the material so those can be manipulated with webgl
+   * Get all the website images
+   *  Load their textures
+   *  Create a geometry and material for them
+   * Mouse hover/ leave interactions
+   * Set meshes position and scaling according to the images position in the website
+   */
   mergeHtmlWebGl() {
     this.material = new THREE.ShaderMaterial({
       uniforms: {
@@ -216,6 +238,10 @@ export default class Canvas {
     });
   }
 
+  /**
+   * Set scale property for each mesh that exists inside three js scene
+   * @param {Object} mesh each object mesh
+   */
   setScale(mesh) {
     let image = mesh.userData.image;
     let bounds = image.getBoundingClientRect();
@@ -223,6 +249,10 @@ export default class Canvas {
     mesh.scale.set(bounds.width, bounds.height, 1);
   }
 
+  /**
+   * Set the correct mesh position according to each image position in the website
+   * @param {Object} mesh each object mesh
+   */
   setPosition(mesh) {
     let image = mesh.userData.image;
     let bounds = image.getBoundingClientRect();
@@ -233,11 +263,19 @@ export default class Canvas {
     );
   }
 
+  /**
+   * Scale + position calls
+   * @param {Object} mesh each object mesh
+   */
   setScalePosition(mesh) {
     this.setScale(mesh);
     this.setPosition(mesh);
   }
 
+  /**
+   * Calculates the right Three.js FOV
+   * @returns FOV calculations
+   */
   getFOV() {
     let height = this.options.height;
 
@@ -246,6 +284,10 @@ export default class Canvas {
     return (fov / Math.PI) * 180;
   }
 
+  /**
+   * Mouse movement intersections
+   * Looks for objects that are being hovered inside the scene
+   */
   onMouseMovement() {
     window.addEventListener(
       "mousemove",
@@ -266,6 +308,9 @@ export default class Canvas {
     );
   }
 
+  /**
+   * Resize window function
+   */
   resize() {
     this.options.height = window.innerHeight;
     this.options.width = window.innerWidth;
@@ -286,6 +331,9 @@ export default class Canvas {
     this.handleDocumentBodySettings();
   }
 
+  /**
+   * Resize window event listener function
+   */
   setupResize() {
     window.addEventListener("resize", this.resize.bind(this));
   }
@@ -336,6 +384,9 @@ export default class Canvas {
     this.composer.addPass(this.customPass);
   }
 
+  /**
+   * Animation loop function
+   */
   render() {
     this.time += 0.05;
 

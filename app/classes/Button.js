@@ -13,12 +13,18 @@ export default class Button {
     this.addClickScrollEventListener();
   }
 
+  /**
+   * When the class initializes sets the website background to the one saved on LS
+   */
   onCreate() {
     this.canvas.style.backgroundImage = JSON.parse(
       localStorage.getItem("color")
     );
   }
 
+  /**
+   * On click logic
+   */
   onClick() {
     let color = this.canvas.style.backgroundImage;
 
@@ -43,23 +49,32 @@ export default class Button {
     }
   }
 
+  /**
+   * Scroll to the top
+   */
   scrollPageToTop() {
     window.scroll(0, 0);
   }
 
+  /**
+   * Add event listeners
+   */
   addEventListener() {
     this.element.addEventListener("click", this.onClick.bind(this));
   }
 
+  /**
+   * Add scroll event listeners
+   */
   addClickScrollEventListener() {
     this.buttonTitle.addEventListener("click", this.scrollPageToTop.bind(this));
   }
 
+  /**
+   * Save the current background color on the LS
+   * @param {String} color CSS background-image property
+   */
   saveColor(color) {
     localStorage.setItem("color", JSON.stringify(color));
   }
-
-  // removeEventListeners () {
-  //   this.element.removeEventListener('click', this.onMouseLeaveEvent)
-  // }
 }
