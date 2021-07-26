@@ -39,7 +39,7 @@
   transition: all 0.2s;
 
   &:hover {
-    background-color: $color-pampas;
+    background-color: rgba($color: $color-pampas, $alpha: 0.225);
     color: $color-cod-grey;
   }
 

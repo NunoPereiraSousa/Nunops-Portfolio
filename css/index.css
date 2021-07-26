@@ -1281,7 +1281,7 @@ body::-webkit-scrollbar {
 }
 
 .home__awards__list__item:hover {
-  background-color: #f6f5f1;
+  background-color: rgba(246, 245, 241, 0.225);
   color: #1a1a1a;
 }
 
