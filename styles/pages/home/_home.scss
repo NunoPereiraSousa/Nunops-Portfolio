@@ -18,6 +18,7 @@
     width: 32.6rem;
   }
 }
+
 .home__label {
   bottom: 4rem;
   position: absolute;
@@ -34,6 +35,11 @@
   left: 4rem;
   position: absolute;
   text-transform: uppercase;
+  transition: all $ease-out-expo 0.4s;
+
+  &:hover {
+    opacity: 0.75;
+  }
 
   @include media("<phone") {
     left: 2rem;

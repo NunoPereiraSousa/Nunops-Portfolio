@@ -11,11 +11,11 @@
 }
 
 .footer__label {
-  margin: 40.2rem 0;
+  margin: 36.2rem 0;
   text-align: center;
 
   @include media("<=tablet") {
-    margin: 34rem 0;
+    margin: 32rem 0;
   }
 
   @include media("<phone") {
@@ -32,21 +32,27 @@
   @extend %description-150;
 
   font-weight: bold;
-
   line-height: 1.2;
-
+  transition: all $ease-out-expo 0.4s;
   width: fit-content;
 
   &:nth-child(even) {
     justify-self: end;
   }
+
+  &:hover {
+    opacity: 0.75;
+  }
 }
 
 .footer__name {
-  margin-top: 3rem;
+  cursor: pointer;
   fill: $color-pampas;
+  margin-top: 3rem;
   margin-bottom: 1.5rem;
+  transition: all $ease-out-expo 0.8s;
 
-  @include media("<phone") {
+  &:hover {
+    opacity: 0.75;
   }
 }

@@ -31,7 +31,8 @@ export default class Page {
 
     new Button({
       buttonTitle: this.selectorChildren.up,
-      element: this.selectorChildren.button
+      element: this.selectorChildren.button,
+      svg: document.querySelector(".footer__name")
     });
 
     let currentColor =

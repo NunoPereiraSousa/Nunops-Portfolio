@@ -1,8 +1,8 @@
 .home__categories__list {
-  margin: 40.2rem 0;
+  margin: 36.2rem 0;
 
   @include media("<=tablet") {
-    margin: 34rem 0;
+    margin: 32rem 0;
   }
 
   @include media("<phone") {

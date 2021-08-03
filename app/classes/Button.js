@@ -2,8 +2,9 @@ import { GRADIENT_ONE, GRADIENT_TWO, GRADIENT_THREE } from "../utils/color.js";
 import GSAP from "gsap";
 
 export default class Button {
-  constructor({ buttonTitle, element }) {
+  constructor({ buttonTitle, element, svg }) {
     this.buttonTitle = document.querySelector(buttonTitle);
+    this.svg = svg;
     this.element = document.querySelector(element);
 
     this.canvas = document.querySelector(".webgl");
@@ -67,6 +68,7 @@ export default class Button {
    * Add scroll event listeners
    */
   addClickScrollEventListener() {
+    this.svg.addEventListener("click", this.scrollPageToTop.bind(this));
     this.buttonTitle.addEventListener("click", this.scrollPageToTop.bind(this));
   }
 

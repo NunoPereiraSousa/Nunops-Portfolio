@@ -1,10 +1,10 @@
 .home__services__label {
   line-height: 1.6;
-  margin: 40.2rem auto;
+  margin: 36.2rem auto;
   max-width: 51.4rem;
 
   @include media("<tablet") {
-    margin: 34rem auto;
+    margin: 32rem auto;
   }
 
   @include media("<phone") {
@@ -115,7 +115,18 @@
 }
 
 .home__services__list__desc {
-  @extend %description-40;
+  @extend %description-30;
 
+  font-family: $font-supreme;
+  font-weight: 200;
   margin-top: 1.6rem;
+
+  @include media("<=tablet") {
+    font-size: 2.4rem;
+    font-weight: 400;
+  }
+
+  @include media("<phone") {
+    font-size: 1.5rem;
+  }
 }

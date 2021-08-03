@@ -10,6 +10,7 @@
   pointer-events: auto;
   position: absolute;
   top: 4rem;
+  transition: all $ease-out-expo 0.4s;
 
   &:first-child {
     cursor: pointer;
@@ -26,5 +27,9 @@
     @include media("<phone") {
       right: 2rem;
     }
+  }
+
+  &:hover {
+    opacity: 0.75;
   }
 }
