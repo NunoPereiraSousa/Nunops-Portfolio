@@ -1,21 +1,38 @@
 .footer {
-  margin-top: 30rem;
+}
+
+.footer__label__wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.footer__stars {
+  animation: spin-and-scale 6s ease infinite;
+  fill: $color-pampas;
+  height: 1.4rem;
+  width: 1.4rem;
 
   @include media("<=tablet") {
-    margin-top: 18.8888rem;
+    height: 1.25rem;
+    width: 1.25rem;
   }
 
   @include media("<phone") {
-    margin-top: 10.7142rem;
+    height: 1.05rem;
+    width: 1.05rem;
   }
 }
 
 .footer__label {
-  margin: 36.2rem 0;
-  text-align: center;
+  @extend %description-18;
+  font-family: $font-supreme;
+  font-weight: 100;
+
+  margin: 30.2rem 6rem;
 
   @include media("<=tablet") {
-    margin: 32rem 0;
+    margin: 26rem 0;
   }
 
   @include media("<phone") {

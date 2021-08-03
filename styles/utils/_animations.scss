@@ -3,3 +3,14 @@
     transform: rotate(360deg);
   }
 }
+
+@keyframes spin-and-scale {
+  0%,
+  100% {
+    transform: rotate(360deg) scale(1.2);
+  }
+
+  50% {
+    transform: rotate(0) scale(1);
+  }
+}

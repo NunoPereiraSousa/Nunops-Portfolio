@@ -1,9 +1,9 @@
 .home__awards__label {
-  margin: 36.2rem 0;
+  margin: 30.2rem 0;
   text-align: center;
 
   @include media("<tablet") {
-    margin: 32rem 0;
+    margin: 26rem 0;
   }
 
   @include media("<phone") {

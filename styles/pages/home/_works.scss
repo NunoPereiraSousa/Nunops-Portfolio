@@ -1,10 +1,10 @@
 .home__works__label {
-  margin: 25.1rem auto 36.2rem;
+  margin: 18.1rem auto 30.2rem;
   max-width: 51.1rem;
   line-height: 1.6;
 
   @include media("<tablet") {
-    margin: 17rem 0 32rem;
+    margin: 17rem 0 26rem;
   }
 
   @include media("<phone") {
@@ -115,7 +115,7 @@
     }
   }
 
-  .home__works__list__link:nth-child(3) & {
+  .home__works__list__link:nth-child(4) & {
     width: 66.3rem;
 
     @include media("<tablet") {
@@ -127,7 +127,7 @@
     }
   }
 
-  .home__works__list__link:nth-child(4) & {
+  .home__works__list__link:nth-child(3) & {
     width: 73.3rem;
 
     @include media("<tablet") {
@@ -231,7 +231,7 @@
   }
 }
 
-.home__works__list__link:nth-child(3) .home__works__list__media {
+.home__works__list__link:nth-child(4) .home__works__list__media {
   height: 93.9rem;
   width: 66.3rem;
 
@@ -250,7 +250,7 @@
   }
 }
 
-.home__works__list__link:nth-child(4) .home__works__list__media {
+.home__works__list__link:nth-child(3) .home__works__list__media {
   height: 100.4rem;
   width: 73.3rem;
 

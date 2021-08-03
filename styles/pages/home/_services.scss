@@ -1,10 +1,10 @@
 .home__services__label {
   line-height: 1.6;
-  margin: 36.2rem auto;
+  margin: 30.2rem auto;
   max-width: 51.4rem;
 
   @include media("<tablet") {
-    margin: 32rem auto;
+    margin: 26rem auto;
   }
 
   @include media("<phone") {

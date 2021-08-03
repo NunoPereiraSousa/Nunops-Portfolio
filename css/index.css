@@ -233,6 +233,30 @@ html, body, .preloader, .navigation, .noise::before, .home__works__list__media__
   }
 }
 
+@-webkit-keyframes spin-and-scale {
+  0%,
+  100% {
+    -webkit-transform: rotate(360deg) scale(1.2);
+            transform: rotate(360deg) scale(1.2);
+  }
+  50% {
+    -webkit-transform: rotate(0) scale(1);
+            transform: rotate(0) scale(1);
+  }
+}
+
+@keyframes spin-and-scale {
+  0%,
+  100% {
+    -webkit-transform: rotate(360deg) scale(1.2);
+            transform: rotate(360deg) scale(1.2);
+  }
+  50% {
+    -webkit-transform: rotate(0) scale(1);
+            transform: rotate(0) scale(1);
+  }
+}
+
 .home__works__list__category {
   font-size: 1.2rem;
   font-weight: 300;
@@ -248,12 +272,12 @@ body {
   font-size: 1.5rem;
 }
 
-.preloader__title {
+.preloader__title, .footer__label {
   font-size: 1.7rem;
 }
 
 @media (max-width: 767px) {
-  .preloader__title {
+  .preloader__title, .footer__label {
     font-size: 1.4rem;
   }
 }
@@ -585,30 +609,49 @@ body::-webkit-scrollbar {
   opacity: 0.75;
 }
 
-.footer {
-  margin-top: 30rem;
+.footer__label__wrapper {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.footer__stars {
+  -webkit-animation: spin-and-scale 6s ease infinite;
+          animation: spin-and-scale 6s ease infinite;
+  fill: #f6f5f1;
+  height: 1.4rem;
+  width: 1.4rem;
 }
 
 @media (max-width: 1024px) {
-  .footer {
-    margin-top: 18.8888rem;
+  .footer__stars {
+    height: 1.25rem;
+    width: 1.25rem;
   }
 }
 
 @media (max-width: 767px) {
-  .footer {
-    margin-top: 10.7142rem;
+  .footer__stars {
+    height: 1.05rem;
+    width: 1.05rem;
   }
 }
 
 .footer__label {
-  margin: 36.2rem 0;
-  text-align: center;
+  font-family: "Supreme";
+  font-weight: 100;
+  margin: 30.2rem 6rem;
 }
 
 @media (max-width: 1024px) {
   .footer__label {
-    margin: 32rem 0;
+    margin: 26rem 0;
   }
 }
 
@@ -743,13 +786,13 @@ body::-webkit-scrollbar {
 
 .home__myself__label {
   line-height: 1.6;
-  margin: 36.2rem auto;
+  margin: 30.2rem auto;
   max-width: 51.1rem;
 }
 
 @media (max-width: 1024px) {
   .home__myself__label {
-    margin: 32rem 0;
+    margin: 24rem 0;
   }
 }
 
@@ -803,12 +846,12 @@ body::-webkit-scrollbar {
 }
 
 .home__categories__list {
-  margin: 36.2rem 0;
+  margin: 30.2rem 0;
 }
 
 @media (max-width: 1024px) {
   .home__categories__list {
-    margin: 32rem 0;
+    margin: 26rem 0;
   }
 }
 
@@ -905,14 +948,14 @@ body::-webkit-scrollbar {
 }
 
 .home__works__label {
-  margin: 25.1rem auto 36.2rem;
+  margin: 18.1rem auto 30.2rem;
   max-width: 51.1rem;
   line-height: 1.6;
 }
 
 @media (max-width: 1023px) {
   .home__works__label {
-    margin: 17rem 0 32rem;
+    margin: 17rem 0 26rem;
   }
 }
 
@@ -1054,34 +1097,34 @@ body::-webkit-scrollbar {
   }
 }
 
-.home__works__list__link:nth-child(3) .home__works__list__header {
+.home__works__list__link:nth-child(4) .home__works__list__header {
   width: 66.3rem;
 }
 
 @media (max-width: 1023px) {
-  .home__works__list__link:nth-child(3) .home__works__list__header {
+  .home__works__list__link:nth-child(4) .home__works__list__header {
     width: calc(100vw - 8rem);
   }
 }
 
 @media (max-width: 767px) {
-  .home__works__list__link:nth-child(3) .home__works__list__header {
+  .home__works__list__link:nth-child(4) .home__works__list__header {
     width: 100%;
   }
 }
 
-.home__works__list__link:nth-child(4) .home__works__list__header {
+.home__works__list__link:nth-child(3) .home__works__list__header {
   width: 73.3rem;
 }
 
 @media (max-width: 1023px) {
-  .home__works__list__link:nth-child(4) .home__works__list__header {
+  .home__works__list__link:nth-child(3) .home__works__list__header {
     width: calc(100vw - 8rem);
   }
 }
 
 @media (max-width: 767px) {
-  .home__works__list__link:nth-child(4) .home__works__list__header {
+  .home__works__list__link:nth-child(3) .home__works__list__header {
     width: 100%;
   }
 }
@@ -1194,51 +1237,51 @@ body::-webkit-scrollbar {
   }
 }
 
-.home__works__list__link:nth-child(3) .home__works__list__media {
+.home__works__list__link:nth-child(4) .home__works__list__media {
   height: 93.9rem;
   width: 66.3rem;
 }
 
 @media (max-width: 1023px) {
-  .home__works__list__link:nth-child(3) .home__works__list__media {
+  .home__works__list__link:nth-child(4) .home__works__list__media {
     width: calc(100vw - 8rem);
   }
 }
 
 @media (max-width: 767px) {
-  .home__works__list__link:nth-child(3) .home__works__list__media {
+  .home__works__list__link:nth-child(4) .home__works__list__media {
     height: 54rem;
     width: calc(100vw - 4rem);
   }
 }
 
 @media (max-width: 413px) {
-  .home__works__list__link:nth-child(3) .home__works__list__media {
+  .home__works__list__link:nth-child(4) .home__works__list__media {
     height: 48rem;
     width: calc(100vw - 4rem);
   }
 }
 
-.home__works__list__link:nth-child(4) .home__works__list__media {
+.home__works__list__link:nth-child(3) .home__works__list__media {
   height: 100.4rem;
   width: 73.3rem;
 }
 
 @media (max-width: 1023px) {
-  .home__works__list__link:nth-child(4) .home__works__list__media {
+  .home__works__list__link:nth-child(3) .home__works__list__media {
     width: calc(100vw - 8rem);
   }
 }
 
 @media (max-width: 767px) {
-  .home__works__list__link:nth-child(4) .home__works__list__media {
+  .home__works__list__link:nth-child(3) .home__works__list__media {
     height: 54rem;
     width: calc(100vw - 4rem);
   }
 }
 
 @media (max-width: 413px) {
-  .home__works__list__link:nth-child(4) .home__works__list__media {
+  .home__works__list__link:nth-child(3) .home__works__list__media {
     height: 48rem;
     width: calc(100vw - 4rem);
   }
@@ -1295,13 +1338,13 @@ body::-webkit-scrollbar {
 }
 
 .home__awards__label {
-  margin: 36.2rem 0;
+  margin: 30.2rem 0;
   text-align: center;
 }
 
 @media (max-width: 1023px) {
   .home__awards__label {
-    margin: 32rem 0;
+    margin: 26rem 0;
   }
 }
 
@@ -1413,13 +1456,13 @@ body::-webkit-scrollbar {
 
 .home__services__label {
   line-height: 1.6;
-  margin: 36.2rem auto;
+  margin: 30.2rem auto;
   max-width: 51.4rem;
 }
 
 @media (max-width: 1023px) {
   .home__services__label {
-    margin: 32rem auto;
+    margin: 26rem auto;
   }
 }
 
