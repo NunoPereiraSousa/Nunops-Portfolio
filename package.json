@@ -11,6 +11,8 @@
     "imagesloaded": "^4.1.4",
     "include-media": "^1.4.10",
     "lodash": "^4.17.21",
+    "normalize-wheel": "^1.0.1",
+    "prefix": "^1.0.0",
     "pug": "^3.0.2",
     "sass": "^1.35.2",
     "three": "^0.130.1"

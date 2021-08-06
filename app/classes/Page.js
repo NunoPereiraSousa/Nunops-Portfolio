@@ -3,6 +3,8 @@ import Canvas from "./Canvas.js";
 import each from "lodash/each";
 import Button from "../classes/Button.js";
 import HeroCanvas from "../classes/HeroCanvas.js";
+import Prefix from "prefix";
+import NormalizeWheel from "normalize-wheel";
 
 export default class Page {
   constructor({ id, element, elements }) {
@@ -16,6 +18,13 @@ export default class Page {
       animationsLines: "[data-animation='line']",
       animationsSliders: "[data-animation='slider']"
     };
+
+    this.onMouseWheelEvent = this.onMouseWheel.bind(this);
+
+    this.transformPrefix = Prefix("transform");
+
+    this.addEventListeners();
+    this.addClickEvent();
   }
 
   /**
@@ -24,6 +33,16 @@ export default class Page {
   create() {
     this.element = document.querySelector(this.selector);
     this.elements = {};
+
+    this.scroll = {
+      // first position
+      current: 0,
+      // where the mouse goes to
+      target: 0,
+      // last position
+      last: 0,
+      limit: 0
+    };
 
     new HeroCanvas();
 
@@ -63,5 +82,68 @@ export default class Page {
         }
       }
     });
+  }
+
+  onResize() {
+    if (this.elements.wrapper) {
+      this.scroll.limit =
+        this.elements.wrapper.clientHeight - window.innerHeight;
+    }
+  }
+
+  onMouseWheel(event) {
+    const { pixelY } = NormalizeWheel(event);
+
+    this.scroll.target += pixelY;
+  }
+
+  update() {
+    this.scroll.target = gsap.utils.clamp(
+      0,
+      this.scroll.limit,
+      this.scroll.target
+    );
+
+    this.scroll.current = gsap.utils.interpolate(
+      this.scroll.current,
+      this.scroll.target,
+      0.05
+    );
+
+    if (this.scroll.current < 0.01) {
+      this.scroll.current = 0;
+    }
+
+    if (this.elements.wrapper) {
+      this.elements.wrapper.style[
+        this.transformPrefix
+      ] = `translateY(-${this.scroll.current}px)`;
+    }
+  }
+
+  scrollPageToTop() {
+    this.scroll = {
+      // first position
+      current: 0,
+      // where the mouse goes to
+      target: 0,
+      // last position
+      last: 0,
+      limit: 0
+    };
+
+    this.elements.wrapper.style[this.transformPrefix] = "0px";
+  }
+
+  addClickEvent() {
+    window.addEventListener("click", this.scrollPageToTop.bind(this));
+  }
+
+  addEventListeners() {
+    window.addEventListener("mousewheel", this.onMouseWheelEvent);
+  }
+
+  removeEventListeners() {
+    window.removeEventListener("mousewheel", this.onMouseWheelEvent);
   }
 }

@@ -14,29 +14,25 @@
   width: 1.4rem;
 
   @include media("<=tablet") {
-    height: 1.25rem;
-    width: 1.25rem;
-  }
-
-  @include media("<phone") {
-    height: 1.05rem;
-    width: 1.05rem;
+    display: none;
   }
 }
 
 .footer__label {
   @extend %description-18;
+
   font-family: $font-supreme;
   font-weight: 100;
 
-  margin: 30.2rem 6rem;
+  margin: 36.2rem 6rem;
 
   @include media("<=tablet") {
-    margin: 26rem 0;
+    margin: 30rem auto;
   }
 
   @include media("<phone") {
     margin: 20rem 0;
+    width: 60vw;
   }
 }
 

@@ -440,7 +440,8 @@ body {
 html {
   font-size: calc(100vw / 1920 * 10);
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow: hidden;
+  position: fixed;
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
   width: 100%;
@@ -631,33 +632,26 @@ body::-webkit-scrollbar {
 
 @media (max-width: 1024px) {
   .footer__stars {
-    height: 1.25rem;
-    width: 1.25rem;
-  }
-}
-
-@media (max-width: 767px) {
-  .footer__stars {
-    height: 1.05rem;
-    width: 1.05rem;
+    display: none;
   }
 }
 
 .footer__label {
   font-family: "Supreme";
   font-weight: 100;
-  margin: 30.2rem 6rem;
+  margin: 36.2rem 6rem;
 }
 
 @media (max-width: 1024px) {
   .footer__label {
-    margin: 26rem 0;
+    margin: 30rem auto;
   }
 }
 
 @media (max-width: 767px) {
   .footer__label {
     margin: 20rem 0;
+    width: 60vw;
   }
 }
 
@@ -729,6 +723,10 @@ body::-webkit-scrollbar {
   opacity: 0.025;
   pointer-events: none;
   z-index: 3;
+}
+
+.home__wrapper {
+  scroll-behavior: smooth;
 }
 
 .home__intro {

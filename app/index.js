@@ -9,6 +9,10 @@ class App {
     this.createPreloader();
 
     this.createPages();
+
+    this.onResize();
+    this.addResizeEventListener();
+    this.update();
   }
 
   /**
@@ -39,6 +43,24 @@ class App {
     this.page = this.pages[this.template];
 
     this.page.create();
+  }
+
+  update() {
+    if (this.page && this.page.update) {
+      this.page.update();
+    }
+
+    this.frame = window.requestAnimationFrame(this.update.bind(this));
+  }
+
+  onResize() {
+    if (this.page && this.page.onResize) {
+      this.page.onResize();
+    }
+  }
+
+  addResizeEventListener() {
+    window.addEventListener("resize", this.onResize.bind(this));
   }
 }
 

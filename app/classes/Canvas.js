@@ -3,7 +3,7 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import fragment from "../shaders/fragment.glsl";
 import vertex from "../shaders/vertex.glsl";
 import gsap from "gsap";
-import mockup from "../../img/MelchiCover.jpg";
+import mockup from "../../img/PosterService01.jpg";
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
@@ -49,8 +49,7 @@ export default class Canvas {
     this.resize();
     this.setupResize();
 
-    this.initSmoothScroll();
-    this.composerPass();
+    // this.initSmoothScroll();
     this.render();
   }
 
@@ -338,47 +337,6 @@ export default class Canvas {
     window.addEventListener("resize", this.resize.bind(this));
   }
 
-  composerPass() {
-    this.composer = new EffectComposer(this.renderer);
-    this.renderPass = new RenderPass(this.scene, this.camera);
-    this.composer.addPass(this.renderPass);
-
-    var counter = 0.0;
-    this.myEffect = {
-      uniforms: {
-        tDiffuse: { value: null },
-        scrollSpeed: { value: null }
-      },
-      vertexShader: `
-      varying vec2 vUv;
-      void main() {
-        vUv = uv;
-        gl_Position = projectionMatrix 
-          * modelViewMatrix 
-          * vec4( position, 1.0 );
-      }
-      `,
-      fragmentShader: `
-      uniform sampler2D tDiffuse;
-      varying vec2 vUv;
-      uniform float scrollSpeed;
-
-      void main(){
-        vec2 newUV = vUv;
-        float area = smoothstep(0.25,0.,vUv.y);
-        newUV.x -= ((vUv.x + area * 0.5) - 1.) *0.085*area;
-
-        gl_FragColor = texture2D( tDiffuse, newUV);
-      }
-      `
-    };
-
-    this.customPass = new ShaderPass(this.myEffect);
-    this.customPass.renderToScreen = true;
-
-    this.composer.addPass(this.customPass);
-  }
-
   /**
    * Animation loop function
    */
@@ -391,13 +349,13 @@ export default class Canvas {
       material.uniforms.time.value = this.time;
     });
 
-    this.siSmoothScroller();
+    // this.siSmoothScroller();
 
     this.allMeshes.forEach(mesh => {
       this.setScalePosition(mesh);
     });
 
-    this.composer.render();
+    this.renderer.render(this.scene, this.camera);
 
     requestAnimationFrame(this.render.bind(this));
   }

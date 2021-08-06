@@ -1,3 +1,7 @@
+.home__wrapper {
+  scroll-behavior: smooth;
+}
+
 .home__intro {
   position: relative;
   @extend %center;

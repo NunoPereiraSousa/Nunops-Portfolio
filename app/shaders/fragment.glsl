@@ -9,5 +9,4 @@ void main()	{
 	vec4 oceanView = texture2D(uImage, newUV);
 
 	gl_FragColor = oceanView;
-	// gl_FragColor.rgb += 0.01*vec3(vNoise);
 }

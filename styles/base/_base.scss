@@ -3,7 +3,8 @@ html {
 
   font-size: calc(100vw / 1920 * 10);
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow: hidden;
+  position: fixed;
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
   width: 100%;
@@ -32,6 +33,8 @@ body {
   scroll-behavior: smooth;
   text-transform: uppercase;
   -webkit-overflow-scrolling: touch;
+
+  // position: fixed;
 }
 
 body::-webkit-scrollbar {
@@ -39,6 +42,7 @@ body::-webkit-scrollbar {
 }
 
 .content {
+  // @extend %cover;
   height: 100%;
 }
 
